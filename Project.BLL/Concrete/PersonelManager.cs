@@ -1,16 +1,18 @@
 ﻿using Project.BLL.Concrete.Repositories;
-using Project.DAL.Abstract;
+using Project.BLL.Abstract;
 using Project.ENTITIES.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project.DAL.Abstract;
 
 namespace Project.BLL.Concrete
 {
-    public class PersonelManager : GenericRepository<Personel>
-    {
+    public class PersonelManager :IPersonelService
+        {
+
         IPersonelDal _personelDal;
 
         public PersonelManager(IPersonelDal personelDal)
@@ -38,5 +40,9 @@ namespace Project.BLL.Concrete
             _personelDal.Delete(id);
         }
 
+        public List<Personel> GetAll(Func<Personel, bool> predicate)
+        {
+           return _personelDal.GetAll(predicate);
+        }
     }
 }

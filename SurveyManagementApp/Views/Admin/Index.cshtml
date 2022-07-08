@@ -1,4 +1,6 @@
 ﻿@using Project.ENTITIES.Concrete
+@using System.Linq
+
 @model List<Company>
 
 @{
@@ -11,17 +13,44 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Company Name</th>
+            <th scope="col">Company Employees List</th>
             <th scope="col">Delete</th>
             <th scope="col">Update</th>
         </tr>
     </thead>
     <tbody>
-        @{int c = 0;}
-        @foreach (var item in Model)
+        @{int c = 0;
+            var perList = ViewBag.perList;
+            List<Personel> personels = new List<Personel>();
+            if (ViewBag.Role!=null&&ViewBag.Role.Contains("Manager"))
+            {
+                
+            }
+            }
+        @foreach (var item in ViewBag.CompanyList)
         {
+            foreach (var pItem in perList)
+            {
+                if (item.CompanyID == pItem.CompanyID)
+                {
+                    personels.Add(pItem);
+                }
+            }
             <tr>
-                <th scope="row">@c  @{c++;}</th>
+                <th scope="row">@{++c;} @c</th>
                 <td>@item.CompanyName</td>
+                <td>
+                    @if (personels.Count>0)
+                    {
+                    @Html.DropDownList("PersonelID",
+                   new SelectList(personels,"PersonelID","CurrentComp"), new { @class = "form-control" })
+                        personels.RemoveRange(0, personels.Count);
+                    }
+                    else
+                    {
+                        @Html.Label("","The Company Doesn`t have any personnel.",new {@class="form-control"})
+                }
+                </td>
                 <td><a href="/Admin/DeleteCompany/@item.CompanyID" class="btn btn-danger">Delete</a></td>
                 <td><a href="/Admin/UpdateCompany/@item.CompanyID" class="btn btn-warning">Update</a></td>
 
@@ -31,3 +60,6 @@
 </table>
 
 <a href="/Admin/AddCompany" class="btn btn-primary">Create New Company</a>
+
+<a href="/Admin/CreatePersonel" class="btn btn-success">Create New Personnel</a>
+

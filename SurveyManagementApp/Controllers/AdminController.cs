@@ -20,8 +20,9 @@ namespace SurveyManagementApp.Controllers
         public IEnumerable<EfPersonelDal> Personels { get; set; }
         public ActionResult Index()
         {
-            var companyvalues = cm.GetAll();
-            return View(companyvalues);
+            ViewBag.CompanyList = cm.GetAll();
+            ViewBag.perList = pm.GetAll();
+            return View();
         }
         [HttpGet]
         public ActionResult AddCompany()
@@ -64,8 +65,8 @@ namespace SurveyManagementApp.Controllers
         {
             var personels = pm.GetAll();
             //If Company doesnt have any person. Send unassigned persons.
-            var p = personels.Where(x => x.CompanyID == id).OrderByDescending(x=>x.Role).ToList();
-            var pp = personels.Where(x => x.CompanyID == null).OrderByDescending(x=>x.Role).ToList();
+            var p = personels.Where(x => x.CompanyID == id).OrderByDescending(x => x.Role).ToList();
+            var pp = personels.Where(x => x.CompanyID == null).OrderByDescending(x => x.Role).ToList();
             ViewBag.perList = p.Count > 0 ? p : pp;
             var company = cm.GetById(id);
             ViewBag.company = company;
@@ -103,5 +104,29 @@ namespace SurveyManagementApp.Controllers
             }
             return RedirectToAction("index");
         }
+
+        [HttpGet]
+        public ActionResult CreatePersonel()
+        {
+            ViewBag.perList = pm.GetAll();
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreatePersonel(Personel p,DateTime bornDate)
+        {
+            ValidationResult result = new PersonelValidator().Validate(p);
+            if (result.IsValid)
+            {
+                pm.Add(p);
+                return RedirectToAction("Index");
+            }
+            foreach (var item in result.Errors)
+            {
+                ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+            }
+            CreatePersonel();
+            return View();
+        }
+        
     }
 }

@@ -137,8 +137,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -477,6 +477,17 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JqueryCustom\AUTHORS.txt" />
+    <Content Include="Scripts\JqueryCustom\index.html" />
+    <Content Include="Scripts\JqueryCustom\jquery-ui.css" />
+    <Content Include="Scripts\JqueryCustom\jquery-ui.js" />
+    <Content Include="Scripts\JqueryCustom\jquery-ui.min.css" />
+    <Content Include="Scripts\JqueryCustom\jquery-ui.min.js" />
+    <Content Include="Scripts\JqueryCustom\jquery-ui.structure.css" />
+    <Content Include="Scripts\JqueryCustom\jquery-ui.structure.min.css" />
+    <Content Include="Scripts\JqueryCustom\jquery-ui.theme.css" />
+    <Content Include="Scripts\JqueryCustom\jquery-ui.theme.min.css" />
+    <Content Include="Scripts\JqueryCustom\LICENSE.txt" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -496,10 +507,13 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\AddCompany.cshtml" />
     <Content Include="Views\Admin\UpdateCompany.cshtml" />
+    <Content Include="Views\Admin\CreatePersonel.cshtml" />
+    <Content Include="Scripts\JqueryCustom\package.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Manager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

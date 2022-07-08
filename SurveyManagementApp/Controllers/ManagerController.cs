@@ -8,13 +8,17 @@ using System.Web.Mvc;
 
 namespace SurveyManagementApp.Controllers
 {
-    public class CompanyController : Controller
+    public class ManagerController : Controller
     {
-        // GET: Company
+        // GET: Manager
         CompanyManager cm = new CompanyManager(new EfCompanyDal());
+        PersonelManager pm = new PersonelManager(new EfPersonelDal());
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            ViewBag.Role = nameof(ManagerController);
+            ViewBag.Manager=cm;//Giris yapan manager id si gidecek
+            return RedirectToAction("index","Admin");
         }
     }
 }

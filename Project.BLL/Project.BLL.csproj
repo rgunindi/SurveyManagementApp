@@ -61,11 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICompanyService.cs" />
+    <Compile Include="Abstract\IPersonelService.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\CompanyManager.cs" />
     <Compile Include="Concrete\PersonelManager.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationRules\PersonelValidator.cs" />
     <Compile Include="ValidationRules\CompanyValidator.cs" />
   </ItemGroup>
   <ItemGroup>

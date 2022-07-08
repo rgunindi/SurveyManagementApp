@@ -13,7 +13,6 @@
         <div style="width:400px">
 
             @Html.Label("Company Name")
-            @*@Html.TextBoxFor(x => new Company() { }.CompanyName, new { @class = "form-control" })*@
             @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
             @{Html.Label(Html.ValidationMessageFor(x => x.CompanyName).ToString());}
                  <div class="bg-important" style="margin:5px; color:orangered;" aria-hidden="true">
