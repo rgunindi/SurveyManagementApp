@@ -22,8 +22,8 @@
             <tr>
                 <th scope="row">@c  @{c++;}</th>
                 <td>@item.CompanyName</td>
-                <td><a href="#" class="btn btn-danger">Delete</a></td>
-                <td><a href="#" class="btn btn-warning">Update</a></td>
+                <td><a href="/Admin/DeleteCompany/@item.CompanyID" class="btn btn-danger">Delete</a></td>
+                <td><a href="/Admin/UpdateCompany/@item.CompanyID" class="btn btn-warning">Update</a></td>
 
             </tr>
         }

@@ -1,10 +1,10 @@
 ﻿using Project.DAL.Abstract;
+using Project.ENTITIES.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace Project.DAL.Concrete.Repositories
 {
@@ -24,6 +24,18 @@ namespace Project.DAL.Concrete.Repositories
 
         public void Delete(int id)
         {
+            var o = _obj.Find(id);
+            var a = o.GetType();
+            if (a.Name == "Company")
+            {
+                var el = this.c.Personels.Where(x => x.CompanyID == id);
+                foreach (var item in el)
+                {
+                    item.CompanyID = null;
+                    c.Entry(item).State = EntityState.Modified;
+                }
+                c.SaveChanges();
+            }
             _obj.Remove(_obj.Find(id));
             c.SaveChanges();
         }
@@ -41,13 +53,19 @@ namespace Project.DAL.Concrete.Repositories
         public void Update(T entity)
         {
             c.Entry(entity).State = EntityState.Modified;
-            c.SaveChanges();
+            c.SaveChangesAsync();
         }
 
         public List<T> GetAll(Func<T, bool> predicate)
         {
             return _obj.Where(predicate).ToList();
         }
+
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            return _obj.SingleOrDefault();
+        }
+
     }
-    
+
 }

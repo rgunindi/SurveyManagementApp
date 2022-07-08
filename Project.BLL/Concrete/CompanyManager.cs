@@ -1,19 +1,15 @@
-﻿using Project.BLL.Abstract;
-using Project.DAL.Abstract;
-using Project.DAL.Concrete.Repositories;
+﻿using Project.DAL.Abstract;
+using Project.BLL.Concrete.Repositories;
 using Project.ENTITIES.Concrete;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project.BLL.Concrete
 {
-    public class CompanyManager:ICompanyService
+    public class CompanyManager: GenericRepository<Company>
     {
         ICompanyDal _companyDal;
-
+        IRepository<Company> _companyRepository;
         public CompanyManager(ICompanyDal companyDal)
         {
             _companyDal = companyDal;

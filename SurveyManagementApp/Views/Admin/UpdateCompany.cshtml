@@ -2,10 +2,10 @@
 @model Company
 
 @{
-    ViewBag.Title = "Add Company";
+    ViewBag.Title = "UPDATE Company";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<h1>Create Company</h1>
+<h1>Update Company</h1>
 <br />
 @using (Html.BeginForm(FormMethod.Post))
 {
@@ -13,15 +13,17 @@
         <div style="width:400px">
 
             @Html.Label("Company Name")
-            @*@Html.TextBoxFor(x => new Company() { }.CompanyName, new { @class = "form-control" })*@
-            @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+            @*@Html.TextBoxFor(x=>x.CompanyID, new { @class = "d-none" })*@
+            <input type="number" value=@ViewBag.company.CompanyID name="CompanyID" hidden="hidden"/>
+            @*@Html.TextBox("Id",(object)ViewBag.company.CompanyID,new {@class=""})*@
+            @Html.TextBox("CompanyName",(object)ViewBag.company.CompanyName, new { @class = "form-control" })
             @{Html.Label(Html.ValidationMessageFor(x => x.CompanyName).ToString());}
                  <div class="bg-important" style="margin:5px; color:orangered;" aria-hidden="true">
                  @Html.ValidationMessageFor(x => x.CompanyName)
                  </div>
                  @Html.Label("Company Personnel Authorization ")
            @Html.DropDownListFor(x=>new Personel() { }.PersonelID,new SelectList(ViewBag.perList!=null?ViewBag.perList:String.Empty,"PersonelID", "CurrentComp" ), new { @class = "form-control" })
-            <button style="margin-top:15px" class="btn btn-primary hover">Create Company</button>
+            <button style="margin-top:15px" class="btn btn-warning hover">Update Company</button>
         </div>
     </div>
 }

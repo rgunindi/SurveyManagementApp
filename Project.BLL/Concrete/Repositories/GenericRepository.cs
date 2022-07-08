@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -48,6 +49,11 @@ namespace Project.BLL.Concrete.Repositories
         public List<T> GetAll(Func<T, bool> predicate)
         {
             return _obj.Where(predicate).ToList();
+        }
+
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            return _obj.SingleOrDefault();
         }
     }
 

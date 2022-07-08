@@ -66,25 +66,13 @@
     <Compile Include="EntityFramework\EfSurveyDal.cs" />
     <Compile Include="EntityFramework\EfSurveyQuestionAnswerDal.cs" />
     <Compile Include="EntityFramework\EfSurveyQuestionDal.cs" />
-    <Compile Include="Migrations\202207062231221_First.cs" />
-    <Compile Include="Migrations\202207062231221_First.designer.cs">
-      <DependentUpon>202207062231221_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202207071510121_second.cs" />
-    <Compile Include="Migrations\202207071510121_second.designer.cs">
-      <DependentUpon>202207071510121_second.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202207071516402_third.cs" />
-    <Compile Include="Migrations\202207071516402_third.designer.cs">
-      <DependentUpon>202207071516402_third.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202207071830320_four.cs" />
-    <Compile Include="Migrations\202207071830320_four.designer.cs">
-      <DependentUpon>202207071830320_four.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202207071848110__first.cs" />
     <Compile Include="Migrations\202207071848110__first.designer.cs">
       <DependentUpon>202207071848110__first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207072146188_first.cs" />
+    <Compile Include="Migrations\202207072146188_first.designer.cs">
+      <DependentUpon>202207072146188_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,20 +88,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202207062231221_First.resx">
-      <DependentUpon>202207062231221_First.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202207071510121_second.resx">
-      <DependentUpon>202207071510121_second.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202207071516402_third.resx">
-      <DependentUpon>202207071516402_third.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202207071830320_four.resx">
-      <DependentUpon>202207071830320_four.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207071848110__first.resx">
       <DependentUpon>202207071848110__first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207072146188_first.resx">
+      <DependentUpon>202207072146188_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
