@@ -18,7 +18,7 @@ namespace SurveyManagementApp.Controllers
         {
             ViewBag.Role = nameof(ManagerController);
             ViewBag.Manager=cm;//Giris yapan manager id si gidecek
-            return RedirectToAction("index","Admin");
+            return RedirectToAction("index","Admin",ViewBag);
         }
     }
 }

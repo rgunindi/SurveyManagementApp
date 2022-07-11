@@ -6,7 +6,6 @@ using Project.ENTITIES.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SurveyManagementApp.Controllers
@@ -16,14 +15,14 @@ namespace SurveyManagementApp.Controllers
 
         PersonelManager pm = new PersonelManager(new EfPersonelDal());
         CompanyManager cm = new CompanyManager(new EfCompanyDal());
-        public IEnumerable<EfCompanyDal> Companies { get; set; }
-        public IEnumerable<EfPersonelDal> Personels { get; set; }
+        [Authorize]
         public ActionResult Index()
         {
             ViewBag.CompanyList = cm.GetAll();
             ViewBag.perList = pm.GetAll();
             return View();
         }
+        [Authorize]
         [HttpGet]
         public ActionResult AddCompany()
         {
@@ -32,6 +31,7 @@ namespace SurveyManagementApp.Controllers
             ViewBag.perList = p;
             return View();
         }
+        [Authorize]
         [HttpPost]
         public ActionResult AddCompany(Company company, Personel p)
         {
@@ -54,12 +54,13 @@ namespace SurveyManagementApp.Controllers
             return View();
 
         }
-
+        [Authorize]
         public ActionResult DeleteCompany(int id)
         {
             cm.Delete(id);
             return RedirectToAction("index");
         }
+        [Authorize]
         [HttpGet]
         public ActionResult UpdateCompany(int id)
         {
@@ -72,6 +73,7 @@ namespace SurveyManagementApp.Controllers
             ViewBag.company = company;
             return View();
         }
+        [Authorize] 
         [HttpPost]
         public ActionResult UpdateCompany(Company company, Personel p)
         {
@@ -85,14 +87,14 @@ namespace SurveyManagementApp.Controllers
                 if (pInfo != null)
                 {
                     pInfo.Role = Role.Personel;
-                    innerUp();
+                    InnerUp();
                 }
                 else
                 {
-                    innerUp();
+                    InnerUp();
                 }
             }
-            void innerUp()
+            void InnerUp()
             {
                 var personelUp = pm.GetById(p.PersonelID);
                 if (personelUp != null)
@@ -104,17 +106,32 @@ namespace SurveyManagementApp.Controllers
             }
             return RedirectToAction("index");
         }
-
+        
+        public ActionResult AutoCreate(int id)
+        {   
+            var p = new Personel();
+            p.PersonelName=Faker.Name.First();
+            p.PersonelSurname=Faker.Name.Last();
+            p.BornDate = Faker.Identification.DateOfBirth();
+            p.Role = Role.Personel;
+            p.PersonelPassword = p.LoginCheck;
+            p.CompanyID = id;
+            pm.Add(p);
+            return RedirectToAction("CreatePersonel");
+        }
+        [Authorize]
         [HttpGet]
         public ActionResult CreatePersonel()
         {
             ViewBag.perList = pm.GetAll();
+            ViewBag.CompanyList = cm.GetAll();
             return View();
         }
+        [Authorize]
         [HttpPost]
-        public ActionResult CreatePersonel(Personel p,DateTime bornDate)
+        public ActionResult CreatePersonel(Personel p)
         {
-            ValidationResult result = new PersonelValidator().Validate(p);
+            var result = new PersonelValidator().Validate(p);
             if (result.IsValid)
             {
                 pm.Add(p);

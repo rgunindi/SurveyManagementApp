@@ -22,11 +22,7 @@
         @{int c = 0;
             var perList = ViewBag.perList;
             List<Personel> personels = new List<Personel>();
-            if (ViewBag.Role!=null&&ViewBag.Role.Contains("Manager"))
-            {
-                
-            }
-            }
+        }
         @foreach (var item in ViewBag.CompanyList)
         {
             foreach (var pItem in perList)
@@ -40,16 +36,16 @@
                 <th scope="row">@{++c;} @c</th>
                 <td>@item.CompanyName</td>
                 <td>
-                    @if (personels.Count>0)
+                    @if (personels.Count > 0)
                     {
-                    @Html.DropDownList("PersonelID",
-                   new SelectList(personels,"PersonelID","CurrentComp"), new { @class = "form-control" })
+                        @Html.DropDownList("PersonelID",
+                       new SelectList(personels, "PersonelID", "CurrentComp"), new { @class = "form-control" })
                         personels.RemoveRange(0, personels.Count);
                     }
                     else
                     {
-                        @Html.Label("","The Company Doesn`t have any personnel.",new {@class="form-control"})
-                }
+                        @Html.Label("", "The Company Doesn`t have any personnel.", new { @class = "form-control" })
+                    }
                 </td>
                 <td><a href="/Admin/DeleteCompany/@item.CompanyID" class="btn btn-danger">Delete</a></td>
                 <td><a href="/Admin/UpdateCompany/@item.CompanyID" class="btn btn-warning">Update</a></td>
@@ -58,8 +54,17 @@
         }
     </tbody>
 </table>
+@if (ViewBag.Role != null && ViewBag.Role.Contains("Manager"))
+{
 
-<a href="/Admin/AddCompany" class="btn btn-primary">Create New Company</a>
+    <a href="/Admin/CreatePersonel" class="btn btn-success">Create New Personnel</a>
+}
+else
+{
+    <a href="/Admin/AddCompany" class="btn btn-primary">Create New Company</a>
 
-<a href="/Admin/CreatePersonel" class="btn btn-success">Create New Personnel</a>
+    <a href="/Admin/CreatePersonel" class="btn btn-success">Create New Personnel</a>
+}
+
+
 

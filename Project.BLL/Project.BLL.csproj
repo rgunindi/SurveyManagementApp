@@ -60,9 +60,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAdminService.cs" />
     <Compile Include="Abstract\ICompanyService.cs" />
     <Compile Include="Abstract\IPersonelService.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Concrete\AdminManager.cs" />
     <Compile Include="Concrete\CompanyManager.cs" />
     <Compile Include="Concrete\PersonelManager.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />

@@ -5,9 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.DAL.Abstract
+namespace Project.BLL.Abstract
 {
-    public interface IAdminDal : IRepository<Admin>
+    public interface IAdminService
     {
+        Admin GetAdmin(Admin admin);
+        Admin GetAdminByUserName(string userName);
     }
 }

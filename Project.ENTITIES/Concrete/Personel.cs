@@ -15,7 +15,7 @@ namespace Project.ENTITIES.Concrete
         public string PersonelSurname { get; set; }
         public DateTime BornDate { get; set; }
         public string PersonelPassword { get; set; }
-        public string LoginCheck=>PersonelName+PersonelSurname+BornDate.ToString();
+        public string LoginCheck=>PersonelName+PersonelSurname+BornDate.ToString("yyyy-MM-dd");
         public Role Role { get; set; }
         public int? CompanyID { get; set; }
         public virtual Company Company { get; set; }
