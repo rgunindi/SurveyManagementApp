@@ -1,10 +1,9 @@
 ﻿@using Project.ENTITIES.Concrete
-
 @model List<Company>
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
 }
 
 <table class="table table-striped table-dark">
@@ -13,7 +12,6 @@
             <th scope="col">#</th>
             <th scope="col">Company Name</th>
             <th scope="col">Company Employees List</th>
-            <th scope="col">Delete</th>
             <th scope="col">Update</th>
         </tr>
     </thead>
@@ -46,24 +44,13 @@
                         @Html.Label("", "The Company Doesn`t have any personnel.", new { @class = "form-control" })
                     }
                 </td>
-                <td><a href="/Admin/DeleteCompany/@item.CompanyID" class="btn btn-danger">Delete</a></td>
-                <td><a href="/Admin/UpdateCompany/@item.CompanyID" class="btn btn-warning">Update</a></td>
+                <td><a href="/Manager/UpdateCompany/@item.CompanyID" class="btn btn-warning">Update</a></td>
 
             </tr>
         }
     </tbody>
 </table>
-@if (ViewBag.Role != null && ViewBag.Role.Contains("Manager"))
-{
-
-    <a href="/Admin/CreatePersonel" class="btn btn-success">Create New Personnel</a>
-}
-else
-{
-    <a href="/Admin/AddCompany" class="btn btn-primary">Create New Company</a>
-
-    <a href="/Admin/CreatePersonel" class="btn btn-success">Create New Personnel</a>
-}
+    <a href="/Manager/CreatePersonel" class="btn btn-success">Create New Personnel</a>
 
 
 

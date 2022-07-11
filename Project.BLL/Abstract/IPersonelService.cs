@@ -15,6 +15,7 @@ namespace Project.BLL.Abstract
         void Update(Personel company);
         void Delete(int id);
         List<Personel> GetAll(Func<Personel, bool> predicate);
-
+        Personel GetPersonelInfo(Personel p);
+        List<Personel> GetAllPersonelByCompanyID(int id,dynamic p);
     }
 }
