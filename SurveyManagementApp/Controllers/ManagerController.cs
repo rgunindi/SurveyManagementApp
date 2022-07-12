@@ -1,20 +1,18 @@
 ﻿using Project.BLL.Concrete;
 using Project.DAL.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Project.BLL.ValidationRules;
 using Project.ENTITIES.Concrete;
 
 namespace SurveyManagementApp.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class ManagerController : Controller
     {
         // GET: Manager
         CompanyManager cm = new CompanyManager(new EfCompanyDal());
         PersonelManager pm = new PersonelManager(new EfPersonelDal());
+        
         [HttpGet]
         public ActionResult Index()
         {
@@ -103,7 +101,6 @@ namespace SurveyManagementApp.Controllers
                 personelUp.CompanyID = personelUp.CompanyID ?? c.CompanyID;
                 pm.Update(personelUp);
             }
-
             return RedirectToAction("index");
         } 
     }

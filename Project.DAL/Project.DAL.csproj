@@ -74,6 +74,22 @@
     <Compile Include="Migrations\202207072146188_first.designer.cs">
       <DependentUpon>202207072146188_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202207112222254_second1.cs" />
+    <Compile Include="Migrations\202207112222254_second1.designer.cs">
+      <DependentUpon>202207112222254_second1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207112223563_second.cs" />
+    <Compile Include="Migrations\202207112223563_second.designer.cs">
+      <DependentUpon>202207112223563_second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207112254012_third.cs" />
+    <Compile Include="Migrations\202207112254012_third.designer.cs">
+      <DependentUpon>202207112254012_third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207120008393_userName.cs" />
+    <Compile Include="Migrations\202207120008393_userName.designer.cs">
+      <DependentUpon>202207120008393_userName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +109,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207072146188_first.resx">
       <DependentUpon>202207072146188_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207112222254_second1.resx">
+      <DependentUpon>202207112222254_second1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207112223563_second.resx">
+      <DependentUpon>202207112223563_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207112254012_third.resx">
+      <DependentUpon>202207112254012_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207120008393_userName.resx">
+      <DependentUpon>202207120008393_userName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

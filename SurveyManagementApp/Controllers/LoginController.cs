@@ -6,10 +6,11 @@ using Project.ENTITIES.Concrete;
 
 namespace SurveyManagementApp.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private AdminManager adM = new AdminManager(new EfAdminDal());
-
+        private  PersonelManager pm = new PersonelManager(new EfPersonelDal());
         [HttpGet]
         public ActionResult Index()
         {
@@ -25,6 +26,36 @@ namespace SurveyManagementApp.Controllers
             FormsAuthentication.SetAuthCookie(obj.AdminName, false);
             Session["AdminName"] = obj.AdminName;
             return RedirectToAction("index", "Admin");
+        }
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
+        }
+        [HttpGet]
+        public ActionResult LogoutPersonel()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("UserLogin", "Login");
+        } 
+        [HttpGet]
+        public ActionResult UserLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UserLogin(Personel p)
+        {
+            // if (!ModelState.IsValid) return View();
+            var obj = pm.GetPersonel(p);
+            if (obj == null) return View();
+            FormsAuthentication.SetAuthCookie(obj.UserName, false);
+            Session["UserName"] = obj.UserName;
+            Session["User"] = obj.FullName;
+            return RedirectToAction("index", obj.Role==Role.Manager ? "Manager" : "User");
         }
     }
 }

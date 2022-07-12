@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Project.DAL.Concrete.Repositories
 {
@@ -12,10 +13,12 @@ namespace Project.DAL.Concrete.Repositories
     {
         Context c = new Context();
         DbSet<T> _obj;
+
         public GenericRepository()
         {
             _obj = c.Set<T>();
         }
+
         public void Add(T entity)
         {
             _obj.Add(entity);
@@ -24,19 +27,7 @@ namespace Project.DAL.Concrete.Repositories
 
         public void Delete(int id)
         {
-            var o = _obj.Find(id);
-            var a = o.GetType();
-            if (a.Name == "Company")
-            {
-                var el = this.c.Personels.Where(x => x.CompanyID == id);
-                foreach (var item in el)
-                {
-                    item.CompanyID = null;
-                    c.Entry(item).State = EntityState.Modified;
-                }
-                c.SaveChanges();
-            }
-            _obj.Remove(_obj.Find(id));
+            c.Entry(_obj.Find(id)).State= EntityState.Deleted;
             c.SaveChanges();
         }
 
@@ -53,7 +44,7 @@ namespace Project.DAL.Concrete.Repositories
         public void Update(T entity)
         {
             c.Entry(entity).State = EntityState.Modified;
-            c.SaveChangesAsync();
+            c.SaveChanges();
         }
 
         public List<T> GetAll(Func<T, bool> predicate)
@@ -63,9 +54,7 @@ namespace Project.DAL.Concrete.Repositories
 
         public T Get(Expression<Func<T, bool>> filter)
         {
-            return _obj.SingleOrDefault();
+            return _obj.Where(filter).SingleOrDefault();
         }
-
     }
-
 }

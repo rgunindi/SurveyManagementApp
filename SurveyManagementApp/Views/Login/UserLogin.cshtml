@@ -1,18 +1,17 @@
 ﻿@model dynamic
 
 @{
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-      <form class="form-signin" method="post" action="/Login/index">
-        <h2 class="form-signin-heading">Admin Login Page</h2>
+      <form class="form-signin" method="post" action="/Login/UserLogin">
+        <h2 class="form-signin-heading">User-Manager Login Page</h2>
         <div class="login-wrap">
-            <input type="text" name="AdminName" class="form-control" placeholder="User Name" autofocus>
-            <input type="password"  name="AdminPassword" class="form-control" placeholder="Password">
+            <input type="text" name="UserName" class="form-control" placeholder="User Name" autofocus>
+            <input type="password"  name="PersonelPassword" class="form-control" placeholder="Password">
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
                 <span class="pull-right">
                     <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
-
                 </span>
             </label>
             <button class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>
@@ -47,4 +46,3 @@
           </div>
           <!-- modal -->
       </form>
-

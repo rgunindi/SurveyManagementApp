@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Mosaddek">
-    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Manager, Template, Theme, Responsive, Fluid, Retina">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, User, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="http://thevectorlab.net/flatlab/img/favicon.png">
 
-    <title>FlatLab - Flat & Responsive Bootstrap Manager Template</title>
+    <title>FlatLab - Flat & Responsive Bootstrap User Template</title>
 
     <!-- Bootstrap core CSS -->
     <link href="~/flatlab-master/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@
             <i class="fa fa-bars"></i>
         </div>
         <!--logo start-->
-        <a href="/Manager" class="logo">Flat<span>lab</span></a>
+        <a href="/User" class="logo">Flat<span>lab</span></a>
         <!--logo end-->
         <div class="top-nav ">
             <!--search & user info start-->
@@ -63,24 +63,28 @@
                 </li>
                 <!-- user login dropdown start-->
                 <li class="dropdown">
+                    @if (Session["UserName"] != null)
+                    {
+                        
                     <a data-toggle="dropdown" class="dropdown-toggle" href="~/flatlab-master/index.html#">
                         <img alt="" src="~/flatlab-master/img/avatar1_small.jpg">
                         <span class="username">@Session["User"]</span>
                         <b class="caret"></b>
                     </a>
+                    }
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
                         <li>
-                            <a href="/Manager/index#"><i class=" fa fa-suitcase"></i>Profile</a>
+                            <a href="/User/index#"><i class=" fa fa-suitcase"></i>Profile</a>
                         </li>
                         <li>
-                            <a href="/Manager/index#"><i class="fa fa-cog"></i> Settings</a>
+                            <a href="/User/index#"><i class="fa fa-cog"></i> Settings</a>
                         </li>
                         <li>
-                            <a href="/Manager/index#"><i class="fa fa-bell-o"></i> Notification</a>
+                            <a href="/User/index#"><i class="fa fa-bell-o"></i> Notification</a>
                         </li>
                         <li>
-                            <a href="/login/logoutPersonel"><i class="fa fa-key"></i> Log Out</a>
+                            <a href="/login"><i class="fa fa-key"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -98,7 +102,7 @@
                 @if (User.IsInRole("Manager"))
                 {
                     <li>
-                        <a class="active" href="/Manager/index">
+                        <a class="active" href="/User/index">
                             <i class="fa fa-dashboard"></i>
                             <span>Company</span>
                         </a>
@@ -140,11 +144,21 @@
                     </ul>
                 </li>
                 <li>
+                        @if (Session["UserName"] != null)
+                        {
+                            <a href="/login/logoutPersonel">
+                        <i class="fa fa-lock"></i>
+                                <span>Logout</span>
+                            </a>
+                        }
+                        else
+                        {
                     <a href="javascript:;">
                         <i class="fa fa-user-md"></i>
                         <span>Login Page</span>
                     </a>
                     <ul class="sub">
+                            
                         <li>
                             <a href="/Login/index">Admin Login</a>
                         </li>
@@ -152,6 +166,7 @@
                             <a href="/Login/UserLogin">User Login</a>
                         </li>
                     </ul>
+                        }
                 </li>
 
                 <!--multi level menu start-->

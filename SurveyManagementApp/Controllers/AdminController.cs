@@ -1,26 +1,25 @@
-﻿using FluentValidation.Results;
+﻿using System.Linq;
+using FluentValidation.Results;
 using Project.BLL.Concrete;
 using Project.BLL.ValidationRules;
 using Project.DAL.EntityFramework;
 using Project.ENTITIES.Concrete;
 using System.Web.Mvc;
+using PagedList;
 
 namespace SurveyManagementApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         PersonelManager pm = new PersonelManager(new EfPersonelDal());
         CompanyManager cm = new CompanyManager(new EfCompanyDal());
-
-        [Authorize]
         public ActionResult Index()
         {
             ViewBag.CompanyList = cm.GetAll();
             ViewBag.perList = pm.GetAll();
             return View();
         }
-
-        [Authorize]
         [HttpGet]
         public ActionResult AddCompany()
         {
@@ -29,8 +28,7 @@ namespace SurveyManagementApp.Controllers
             ViewBag.perList = p;
             return View();
         }
-
-        [Authorize]
+        
         [HttpPost]
         public ActionResult AddCompany(Company company, Personel p)
         {
@@ -50,19 +48,18 @@ namespace SurveyManagementApp.Controllers
             {
                 ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
             }
-
             AddCompany();
             return View();
         }
 
-        [Authorize]
+        
         public ActionResult DeleteCompany(int id)
         {
             cm.Delete(id);
             return RedirectToAction("index");
         }
 
-        [Authorize]
+        
         [HttpGet]
         public ActionResult UpdateCompany(int id)
         {
@@ -74,12 +71,11 @@ namespace SurveyManagementApp.Controllers
             return View();
         }
 
-        [Authorize]
+        
         [HttpPost]
         public ActionResult UpdateCompany(Company company, Personel p)
         {
             var c = company;
-
             cm.Update(c);
             //Every company must have a one manager
             if (p.Role != Role.Manager)
@@ -107,7 +103,7 @@ namespace SurveyManagementApp.Controllers
 
             return RedirectToAction("index");
         }
-
+        
         public ActionResult AutoCreate(int id)
         {
             var p = new Personel();
@@ -116,27 +112,32 @@ namespace SurveyManagementApp.Controllers
             p.BornDate = Faker.Identification.DateOfBirth();
             p.Role = Role.Personel;
             p.PersonelPassword = p.LoginCheck;
-            p.CompanyID = id;
+            p.UserName = p.PersonelName + p.PersonelID;
+            if(id!=0)
+                p.CompanyID = id;
             pm.Add(p);
             return RedirectToAction("CreatePersonel");
         }
 
-        [Authorize]
+        
         [HttpGet]
         public ActionResult CreatePersonel()
         {
+            var c= cm.GetAll();
+            c.Insert(0, new Company() { CompanyID =  0, CompanyName = "No assignment" });
             ViewBag.perList = pm.GetAll();
-            ViewBag.CompanyList = cm.GetAll();
+            ViewBag.CompanyList = c;
             return View();
         }
 
-        [Authorize]
+        
         [HttpPost]
         public ActionResult CreatePersonel(Personel p)
         {
             var result = new PersonelValidator().Validate(p);
             if (result.IsValid)
             {
+                p.UserName = p.CheckUserName;
                 pm.Add(p);
                 return RedirectToAction("Index");
             }
@@ -149,6 +150,18 @@ namespace SurveyManagementApp.Controllers
             CreatePersonel();
             return View();
         }
+
         
+        public ActionResult PersonelList(int page = 1)
+        {
+            var p = pm.GetAll().ToPagedList(page, 10);
+            return View(p);
+        }
+        
+        public ActionResult DeletePersonel(int id)
+        {
+            pm.Delete(id);
+            return RedirectToAction("PersonelList");
+        }
     }
 }

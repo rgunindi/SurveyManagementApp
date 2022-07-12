@@ -11,11 +11,13 @@ namespace Project.BLL.Abstract
     {
         List<Personel> GetAll();
         Personel GetById(int id);
-        void Add(Personel company);
-        void Update(Personel company);
+        void Add(Personel p);
+        void Update(Personel p);
         void Delete(int id);
         List<Personel> GetAll(Func<Personel, bool> predicate);
         Personel GetPersonelInfo(Personel p);
+        Personel GetPersonelByUserName(string userName);
         List<Personel> GetAllPersonelByCompanyID(int id,dynamic p);
+        
     }
 }

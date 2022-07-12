@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,6 @@ namespace Project.ENTITIES.Concrete
         [StringLength(20)]
         [Required]
         public string CompanyName { get; set; }
-        public ICollection<Personel> CompanyPersonels { get; set; }
-
+        public virtual ICollection<Personel> CompanyPersonels { get; set; }
     }
 }
