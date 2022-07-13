@@ -55,6 +55,7 @@
     <Compile Include="Abstract\ICompanyDal.cs" />
     <Compile Include="Abstract\IPersonelDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IQuestionDal.cs" />
     <Compile Include="Abstract\ISurveyDal.cs" />
     <Compile Include="Abstract\ISurveyQuestionAnswerDal.cs" />
     <Compile Include="Abstract\ISurveyQuestionDal.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCompanyDal.cs" />
     <Compile Include="EntityFramework\EfPersonelDal.cs" />
+    <Compile Include="EntityFramework\EfQuestionDal.cs" />
     <Compile Include="EntityFramework\EfSurveyDal.cs" />
     <Compile Include="EntityFramework\EfSurveyQuestionAnswerDal.cs" />
     <Compile Include="EntityFramework\EfSurveyQuestionDal.cs" />
@@ -89,6 +91,14 @@
     <Compile Include="Migrations\202207120008393_userName.cs" />
     <Compile Include="Migrations\202207120008393_userName.designer.cs">
       <DependentUpon>202207120008393_userName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207121157377_question.cs" />
+    <Compile Include="Migrations\202207121157377_question.designer.cs">
+      <DependentUpon>202207121157377_question.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207122004582_question1.cs" />
+    <Compile Include="Migrations\202207122004582_question1.designer.cs">
+      <DependentUpon>202207122004582_question1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207120008393_userName.resx">
       <DependentUpon>202207120008393_userName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207121157377_question.resx">
+      <DependentUpon>202207121157377_question.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207122004582_question1.resx">
+      <DependentUpon>202207122004582_question1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

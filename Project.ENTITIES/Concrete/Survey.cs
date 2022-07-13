@@ -11,6 +11,7 @@ namespace Project.ENTITIES.Concrete
     {
         [Key]
         public int SurveyID { get; set; }
+        public string SurveyTitle { get; set; }
         public virtual ICollection<SurveyQuestion> SurveyQuestions { get; set; }
         public int? CompanyID { get; set; }
         public virtual Company Company { get; set; }

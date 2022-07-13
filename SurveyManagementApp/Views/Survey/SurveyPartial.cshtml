@@ -1,0 +1,285 @@
+﻿@* <script src="~/flatlab-master/js/jquery.js"></script> *@
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<link rel="stylesheet" href="~/Content/custom.css"/>
+<script type="text/javascript">
+
+$(document).ready(function(){
+        $("#surveytitle").val(@ViewBag.surveyTitle);});
+$(document).ready(function() {
+  var CheckboxDropdown = function(el) {
+    var _this = this;
+    this.isOpen = false;
+    this.areAllChecked = false;
+    this.$el = $(el);
+    this.$label = this.$el.find('.dropdown-label');
+    this.$checkAll = this.$el.find('[data-toggle="check-all"]').first();
+    this.$inputs = this.$el.find('[type="checkbox"]');
+    
+    this.onCheckBox();
+    
+    this.$label.on('click', function(e) {
+      e.preventDefault();
+      _this.toggleOpen();
+    });
+    
+    this.$checkAll.on('click', function(e) {
+      e.preventDefault();
+      _this.onCheckAll();
+    });
+    
+    this.$inputs.on('change', function(e) {
+      _this.onCheckBox();
+    });
+  };
+  
+  CheckboxDropdown.prototype.onCheckBox = function() {
+    this.updateStatus();
+  };
+  
+  CheckboxDropdown.prototype.updateStatus = function() {
+    var checked = this.$el.find(':checked');
+    
+    this.areAllChecked = false;
+    this.$checkAll.html('Check All');
+    
+    if(checked.length <= 0) {
+      this.$label.html('Select Options');
+    }
+    else if(checked.length === 1) {
+      this.$label.html(checked.parent('label').text());
+    }
+    else if(checked.length === this.$inputs.length) {
+      this.$label.html('All Selected');
+      this.areAllChecked = true;
+      this.$checkAll.html('Uncheck All');
+    }
+    else {
+      this.$label.html(checked.length + ' Selected');
+    }
+  };
+  
+  CheckboxDropdown.prototype.onCheckAll = function(checkAll) {
+    if(!this.areAllChecked || checkAll) {
+      this.areAllChecked = true;
+      this.$checkAll.html('Uncheck All');
+      this.$inputs.prop('checked', true);
+    }
+    else {
+      this.areAllChecked = false;
+      this.$checkAll.html('Check All');
+      this.$inputs.prop('checked', false);
+    }
+    
+    this.updateStatus();
+  };
+  
+  CheckboxDropdown.prototype.toggleOpen = function(forceOpen) {
+    var _this = this;
+    
+    if(!this.isOpen || forceOpen) {
+       this.isOpen = true;
+       this.$el.addClass('on');
+      $(document).on('click', function(e) {
+        if(!$(e.target).closest('[data-control]').length) {
+         _this.toggleOpen();
+        }
+      });
+    }
+    else {
+      this.isOpen = false;
+      this.$el.removeClass('on');
+      // $(document).off('click');
+    }
+  };
+  
+  var checkboxesDropdowns = document.querySelectorAll('[data-control="checkbox-dropdown"]');
+  for(var i = 0, length = checkboxesDropdowns.length; i < length; i++) {
+    new CheckboxDropdown(checkboxesDropdowns[i]);
+  }
+/*-----------------------------------------------------------*/
+
+});
+</script>
+
+
+@* ------------------------------------SCRIPT----------------------------------------- *@
+<script type="text/javascript">
+function titleCheck(){
+    let t=document.getElementById("SurveyTitle");
+                         window.surveyTitle = t.value;
+                         if (t.value==="")
+                             {    
+                                  t.style.borderColor = "red";
+                                  t.style.backgroudColor="blue";
+                                 t.placeholder="Please enter a title";
+                            let m= document.getElementsByClassName("modalselect");
+                             m[0].hidden='hidden';
+                                 alert("Please enter a survey title");
+                             }else {
+                            let m= document.getElementsByClassName("modalselect");
+                            m[0].setAttribute('id','Modal');
+                            t.style.borderColor = "green";
+                            document.getElementById('surveytitle').value=window.surveyTitle;
+                             } }
+                             
+                             document.addEventListener('touchstart', titleCheck, {passive: true});
+</script>
+<script type="text/javascript">
+                    
+                   window.surveyTitle = ""; 
+                let count=0;
+                let answers=[];
+                let postData={};
+                function selectFunc() {
+                    if (document.querySelector('#QType').value === '2') {
+                        document.querySelector('#A').style.display = 'none';
+                        document.querySelector('#add').style.display = 'none';
+                        document.querySelector('#answerP').style.display = 'none';
+                        
+                    } else {
+                        document.querySelector('#A').style.display = 'block';
+                        document.querySelector('#add').style.display = 'block';
+                        document.querySelector('#answerP').style.display = 'block';
+                    }
+                }
+                
+                   
+                           
+                function send(){
+                    let ids= [];
+                    let personels= [];
+                    let anonyms= [];
+                    postData.surveyTitle=window.surveyTitle;
+                    let personel = document.querySelectorAll('input[name="dropdown-group"]');
+                    let anonym= document.querySelectorAll('input[name="an"]');
+                         personel.forEach((i)=>(ids.push(i.checked==true?i.className:'')))
+                         personel.forEach((i)=>(personels.push(i.checked==true?i.value:'')))
+                            anonym.forEach((i)=>(anonyms.push(i.checked==true?i.id:'')))
+                    postData.ids = ids.filter(x =>x);								   
+                    postData.anonyms = anonyms.filter(x =>x);
+                    postData.personels = personels.filter(x =>x);
+                    if (document.getElementById('Question').value===''){
+                        alert('Please Type Question');
+                        return;
+                    }
+                    saving();
+                    $.ajax({
+                                                                     type: 'POST',
+                                                                     url: '@Url.Action("Index","Survey")',
+                                                                     data: postData,
+                                                                     success: function (data) {
+                                                                         alert('Success');
+                                                                     },
+                                                                     dataType: 'json',
+                                                                        traditional: true,
+                                                                 });
+                postData={};
+                }
+               function saving(){
+                    if (document.getElementById('surveytitle').value===''){alert('Please Type Survey Title in Survey Page');return;}
+                    var qtype=document.getElementById('QType').value;
+                                   if (qtype==='0')
+                                       {
+                                          var answer=document.getElementById('A').value;
+                                          var body=document.getElementById('modal-body');
+                                          var div=document.createElement('div');
+                                           div.setAttribute('class','form-group');
+                                           div.setAttribute('style','width:400px');
+                                           var radio=document.createElement('input');
+                                           radio.type='radio';
+                                           radio.setAttribute('name','radio');
+                                           radio.setAttribute('id',`rad${count}`); count++;
+                                           postData.qType=0;
+                                           postData.question = document.getElementById('Question').value;
+                                           radio.setAttribute('value',answers);
+                                           answers.push(answer);
+                                          
+                                           var label=document.createElement('label');
+                                           label.setAttribute('for',`'rad'+count`);
+                                           label.setAttribute('class','bg-success');
+                                           label.innerHTML=answer;
+                                           div.appendChild(radio);
+                                           div.appendChild(label);
+                                           body.appendChild(div);
+                                           postData.values=answers;
+                                           console.log(postData);  
+                                       }
+                                   else if (qtype==='1'){
+                                      var answer=document.getElementById('A').value;
+                                                                                var body=document.getElementById('modal-body');
+                                                                                var div=document.createElement('div');
+                                                                                 div.setAttribute('class','form-group');
+                                                                                 div.setAttribute('style','width:400px');
+                                                                                 var checkbox=document.createElement('input');
+                                                                                checkbox.type='checkbox';
+                                                                                checkbox.setAttribute('id',`checkbox${count}`); count++;
+                                                                                 postData.qType=1;
+                                                                                 postData.question = document.getElementById('Question').value;
+                                                                                 checkbox.setAttribute('value',answer);
+                                                                                 answers.push(answer);
+                                                                                
+                                                                                 var label=document.createElement('label');
+                                                                                 label.setAttribute('for',`'checkbox'+count`);
+                                                                                 label.setAttribute('class','bg-success');
+                                                                                 label.innerHTML=answer;
+                                                                                 div.appendChild(checkbox);
+                                                                                 div.appendChild(label);
+                                                                                 body.appendChild(div);
+                                                                                 postData.values=answers;
+                                                                                 console.log(postData);   
+                                   } else {
+                                                                                                                       postData.qType=2;
+                                                                                                                       postData.question = document.getElementById('Question').value;
+                                                                                                                       postData.values="Text";
+                                   }
+                }
+                //For dropdownHeight
+                 function dropEnter(e,perCount) {
+                            console.log(e.target.id);
+                            var id = e.target.id;
+                            if(e.type==="mouseenter"){
+                               document.querySelectorAll(`label[name="${id}+d"]`)[0].click();
+                            document.querySelectorAll(`tr[id="${id}"]`)[0].style=(`height:${perCount*150}px;`);
+                            }else if(e.type==="mouseleave") {
+                               document.querySelectorAll(`label[name="${id}+d"]`)[0].click(); 
+                            document.querySelectorAll(`tr[id="${id}"]`)[0].style=(`height:150px;`);
+                            }
+                        }
+                </script>
+
+<div class="modal fade modalselect" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position: fixed">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Question Add</h5>
+            </div>
+            <form method="post">
+
+                <div class="modal-body" id="modal-body">
+                    @Html.Label("Survey Title")
+                    <input type="text" class="form-control" id="surveytitle" name="SurveyTitle" readonly="readonly"/>
+                    <p>Please Type Question: </p>
+                    <textarea style="width: 100%" id="Question" name="Q"></textarea>
+                    <p>Please Select Question Answer Type: </p>
+                    <select name="QType" id="QType" onchange="selectFunc()">
+                        <option value="0">Single Choice</option>
+                        <option value="1">Multiple Choice</option>
+                        <option value="2">Text</option>
+                    </select>
+                    <p id="answerP">Please Type Answer: </p>
+                    <textarea style="width: 100%" name="Answer" id="A"></textarea>
+
+
+                    <button type="button" id="add" onclick=" if (document.getElementById('A').value==='') {
+                    alert('Please Type Answer'); return; }else saving(); ">Add Answer</button>
+                   
+                </div>
+                <div clas="modal-footer">
+                    <button type="reset" onclick="send()" class="btn btn-info" data-bs-dismiss="modal" aria-label="Close">Create Question</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

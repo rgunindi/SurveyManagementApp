@@ -8,65 +8,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0479573-7670-4c82-9b83-41a0e94f0c46" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207112222254_second1.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207112222254_second1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207112222254_second1.resx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207112223563_second.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207112223563_second.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207112223563_second.resx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207112254012_third.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207112254012_third.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207112254012_third.resx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207120008393_userName.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207120008393_userName.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207120008393_userName.resx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Content/PagedList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Controllers/UserController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Roles/ManagerRoleProvider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Admin/PersonelList.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Login/UserLogin.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Shared/_UserLayout.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/User/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.SurveyManagementApp/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.BLL/Abstract/IQuestionService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.BLL/Abstract/ISurveyQuestionAnswerService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.BLL/Abstract/ISurveyQuestionService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.BLL/Abstract/ISurveyService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.BLL/Concrete/QuestionManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyQuestionAnswerManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyQuestionManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.DAL/Abstract/IQuestionDal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfQuestionDal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207121157377_question.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207121157377_question.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207121157377_question.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207122004582_question1.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207122004582_question1.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207122004582_question1.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Question.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Content/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Content/custom.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Content/custom.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Controllers/SurveyController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Manager/Survey.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Survey/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Survey/SurveyPartial.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/compilerconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/compilerconfig.json.defaults" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SurveyManagementApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurveyManagementApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Abstract/ICompanyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Abstract/ICompanyService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Abstract/IPersonelService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Abstract/IPersonelService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Concrete/CompanyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Concrete/CompanyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Concrete/PersonelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Concrete/PersonelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.BLL/Project.BLL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Project.BLL.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.DAL/Concrete/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/Concrete/Context.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.DAL/Concrete/Repositories/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/Concrete/Repositories/GenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyQuestionAnswerDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyQuestionAnswerDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyQuestionDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyQuestionDal.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.DAL/Project.DAL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/Project.DAL.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Company.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Company.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Personel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Personel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Survey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Survey.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Concrete/SurveyQuestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/SurveyQuestion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Concrete/SurveyQuestionAnswer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/SurveyQuestionAnswer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Project.ENTITIES.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Project.ENTITIES.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/App_Start/BundleConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/App_Start/BundleConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Content/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Content/bootstrap.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Controllers/AdminController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Controllers/LoginController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Controllers/ManagerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Controllers/ManagerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Global.asax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Global.asax.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Roles/AdminRoleProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Roles/WebRoleProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SurveyManagementApp/SurveyManagementApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/SurveyManagementApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Admin/CreatePersonel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Admin/CreatePersonel.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Admin/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Admin/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Login/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Login/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Manager/CreatePersonel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Manager/CreatePersonel.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Shared/_AdminLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Shared/_AdminLayout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Shared/_ManagerLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Shared/_ManagerLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Web.config" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Web.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Web.config" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Web.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/packages.config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03c98cfc8623445a8db7b66c6ffa5def85db8/21/55886b9e/AsyncControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03c98cfc8623445a8db7b66c6ffa5def85db8/23/3e443065/Controller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03c98cfc8623445a8db7b66c6ffa5def85db8/40/01c834f0/MvcHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03c98cfc8623445a8db7b66c6ffa5def85db8/68/1dbba02f/PartialViewResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03c98cfc8623445a8db7b66c6ffa5def85db8/b3/83c29b64/ActionMethodDispatcher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03c98cfc8623445a8db7b66c6ffa5def85db8/b9/b0fd55e0/WebViewPage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03c98cfc8623445a8db7b66c6ffa5def85db8/d3/c0c90aa3/ReflectedActionDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -103,18 +109,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.21374045",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "HotReloadSettingsPage",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.21374045&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RiderProblemsViewState">
     <hideBySeverity>
       <option value="15" />
@@ -154,7 +162,9 @@
       <workItem from="1657451282888" duration="389000" />
       <workItem from="1657451751730" duration="32000" />
       <workItem from="1657451805862" duration="294000" />
-      <workItem from="1657453139587" duration="56265000" />
+      <workItem from="1657453139587" duration="108797000" />
+      <workItem from="1657715408180" duration="982000" />
+      <workItem from="1657734196316" duration="7724000" />
     </task>
     <servers />
   </component>
@@ -175,6 +185,25 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SurveyManagementApp/Controllers/SurveyController.cs</url>
+          <line>27</line>
+          <properties documentPath="C:\Users\xcod3r\Desktop\SurveyApp\server\SurveyManagementApp\SurveyManagementApp\Controllers\SurveyController.cs" initialLine="27" containingFunctionPresentation="method 'Index'">
+            <startOffsets>
+              <option value="1249" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1250" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 using FluentValidation.Results;
 using Project.BLL.Concrete;
 using Project.BLL.ValidationRules;
@@ -14,6 +14,7 @@ namespace SurveyManagementApp.Controllers
     {
         PersonelManager pm = new PersonelManager(new EfPersonelDal());
         CompanyManager cm = new CompanyManager(new EfCompanyDal());
+      
         public ActionResult Index()
         {
             ViewBag.CompanyList = cm.GetAll();

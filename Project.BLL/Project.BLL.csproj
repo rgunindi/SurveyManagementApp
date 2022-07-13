@@ -61,10 +61,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAdminService.cs" />
+    <Compile Include="Abstract\IQuestionService.cs" />
+    <Compile Include="Abstract\ISurveyQuestionAnswerService.cs" />
+    <Compile Include="Abstract\ISurveyQuestionService.cs" />
+    <Compile Include="Abstract\ISurveyService.cs" />
     <Compile Include="Abstract\ICompanyService.cs" />
     <Compile Include="Abstract\IPersonelService.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
+    <Compile Include="Concrete\QuestionManager.cs" />
+    <Compile Include="Concrete\SurveyQuestionAnswerManager.cs" />
+    <Compile Include="Concrete\SurveyQuestionManager.cs" />
+    <Compile Include="Concrete\SurveyManager.cs" />
     <Compile Include="Concrete\CompanyManager.cs" />
     <Compile Include="Concrete\PersonelManager.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />

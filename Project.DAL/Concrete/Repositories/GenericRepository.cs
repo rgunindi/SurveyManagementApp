@@ -54,7 +54,7 @@ namespace Project.DAL.Concrete.Repositories
 
         public T Get(Expression<Func<T, bool>> filter)
         {
-            return _obj.Where(filter).SingleOrDefault();
+            return  _obj.Where(filter).SingleOrDefault();
         }
     }
 }

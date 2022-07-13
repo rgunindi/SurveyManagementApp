@@ -54,6 +54,7 @@
     <Compile Include="Concrete\Admin.cs" />
     <Compile Include="Concrete\Company.cs" />
     <Compile Include="Concrete\Personel.cs" />
+    <Compile Include="Concrete\Question.cs" />
     <Compile Include="Concrete\Survey.cs" />
     <Compile Include="Concrete\SurveyQuestion.cs" />
     <Compile Include="Concrete\SurveyQuestionAnswer.cs" />

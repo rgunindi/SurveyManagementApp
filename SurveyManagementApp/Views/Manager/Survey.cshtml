@@ -1,0 +1,167 @@
+﻿@using Project.ENTITIES.Concrete
+@model Survey
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+<h2>Create Survey</h2>
+<br/>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <div class="form-group">
+        <div style="width:400px" class="form-body">
+
+            @Html.Label("Survey Title")
+            @Html.TextBoxFor(x => x.SurveyTitle, new {@class = "form-control", id = "SurveyTitle"})
+            <input type="checkbox" id="anonym" value="Set Anonymous"/>  
+        <button type="button" style="margin-top:15px" class="btn btn-success" data-toggle="modal"
+                data-target="#Modal" onclick="titleCheck()">
+            Add Question
+        </button>
+        </div>
+    </div>
+    <a style="margin:15px" href="/Survey/AssignSurvey" class="btn btn-danger hover form-group">Go Assign Survey</a>
+}
+
+<div class="modal fade modalselect" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Question Add</h5>
+            </div>
+            <form method="post">
+
+                <div class="modal-body" id="modal-body">
+                    @Html.Label("Survey Title")
+                    <input type="text" class="form-control" id="surveytitle" name="SurveyTitle" readonly="readonly"/>
+                    <p>Please Type Question: </p>
+                    <textarea style="width: 100%" id="Question" name="Q"></textarea>
+                    <p>Please Select Question Answer Type: </p>
+                    <select name="QType" id="QType" onchange="selectFunc()">
+                        <option value="0">Single Choice</option>
+                        <option value="1">Multiple Choice</option>
+                        <option value="2">Text</option>
+                    </select>
+                    <p id="answerP">Please Type Answer: </p>
+                    <textarea style="width: 100%" name="Answer" id="A"></textarea>
+
+
+                    <button type="button" id="add" onclick=" if (document.getElementById('A').value==='') {
+                    alert('Please Type Answer'); return; }else saving(); ">Add Answer</button>
+                    <script type="text/javascript">
+                   window.surveyTitle = ""; 
+                let count=0;
+                let answers=[];
+                let postData={};
+                function selectFunc() {
+                    if (document.querySelector('#QType').value === '2') {
+                        document.querySelector('#A').style.display = 'none';
+                        document.querySelector('#add').style.display = 'none';
+                        document.querySelector('#answerP').style.display = 'none';
+                        
+                    } else {
+                        document.querySelector('#A').style.display = 'block';
+                        document.querySelector('#add').style.display = 'block';
+                        document.querySelector('#answerP').style.display = 'block';
+                    }
+                }
+                   function titleCheck(){
+                       const t=document.getElementById("SurveyTitle").value;
+                       window.surveyTitle = t;
+                       if (t==="")
+                           {
+                                alert("Please enter a survey title");
+                           }else {
+                          let m= document.getElementsByClassName("modalselect");
+                          m[0].setAttribute('id','Modal');
+                          document.getElementById('surveytitle').value=window.surveyTitle;
+                           } }
+                           
+                function send(){
+                    postData.surveyTitle=window.surveyTitle; 
+                      postData.anonym=document.getElementById("anonym").checked;
+                    if (document.getElementById('Question').value===''){
+                        alert('Please Type Question');
+                        return;
+                    }
+                    saving();
+                    $.ajax({
+                                                                     type: 'POST',
+                                                                     url: '@Url.Action("Survey")',
+                                                                     data: postData,
+                                                                     success: function (data) {
+                                                                         alert('Success');
+                                                                     },
+                                                                     dataType: 'json',
+                                                                        traditional: true,
+                                                                 });
+                postData={};
+                }
+               function saving(){
+                    if (document.getElementById('surveytitle').value===''){alert('Please Type Survey Title in Survey Page');return;}
+                    var qtype=document.getElementById('QType').value;
+                                   if (qtype==='0')
+                                       {
+                                          var answer=document.getElementById('A').value;
+                                          var body=document.getElementById('modal-body');
+                                          var div=document.createElement('div');
+                                           div.setAttribute('class','form-group');
+                                           div.setAttribute('style','width:400px');
+                                           var radio=document.createElement('input');
+                                           radio.type='radio';
+                                           radio.setAttribute('name','radio');
+                                           radio.setAttribute('id',`rad${count}`); count++;
+                                           postData.qType=0;
+                                           postData.question = document.getElementById('Question').value;
+                                           radio.setAttribute('value',answer);
+                                           answers.push(answer);
+                                          
+                                           var label=document.createElement('label');
+                                           label.setAttribute('for',`'rad'+count`);
+                                           label.setAttribute('class','bg-success');
+                                           label.innerHTML=answer;
+                                           div.appendChild(radio);
+                                           div.appendChild(label);
+                                           body.appendChild(div);
+                                           postData.values=answers;
+                                           console.log(postData);  
+                                       }
+                                   else if (qtype==='1'){
+                                      var answer=document.getElementById('A').value;
+                                                                                var body=document.getElementById('modal-body');
+                                                                                var div=document.createElement('div');
+                                                                                 div.setAttribute('class','form-group');
+                                                                                 div.setAttribute('style','width:400px');
+                                                                                 var checkbox=document.createElement('input');
+                                                                                checkbox.type='checkbox';
+                                                                                checkbox.setAttribute('id',`checkbox${count}`); count++;
+                                                                                 postData.qType=1;
+                                                                                 postData.question = document.getElementById('Question').value;
+                                                                                 checkbox.setAttribute('value',answer);
+                                                                                 answers.push(answer);
+                                                                                
+                                                                                 var label=document.createElement('label');
+                                                                                 label.setAttribute('for',`'checkbox'+count`);
+                                                                                 label.setAttribute('class','bg-success');
+                                                                                 label.innerHTML=answer;
+                                                                                 div.appendChild(checkbox);
+                                                                                 div.appendChild(label);
+                                                                                 body.appendChild(div);
+                                                                                 postData.values=answers;
+                                                                                 console.log(postData);   
+                                   } else {
+                                                                                                                       postData.qType=2;
+                                                                                                                       postData.question = document.getElementById('Question').value;
+                                                                                                                       postData.values="Text";
+                                   }
+                }
+                </script>
+                </div>
+                <div clas="modal-footer">
+                    <button type="reset" onclick="send()" class="btn btn-info" data-bs-dismiss="modal" aria-label="Close">Create Question</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
