@@ -12,6 +12,7 @@ namespace Project.DAL.Abstract
         List<T> GetAll();
         T GetById(int id);
         T Get(Expression<Func<T, bool>> filter);
+        T GetFirstOrDefault(Expression<Func<T, bool>> firstEl);
         void Add(T company);
         void Update(T company);
         void Delete(int id);

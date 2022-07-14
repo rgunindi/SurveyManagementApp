@@ -176,6 +176,10 @@ function titleCheck(){
                                                                         traditional: true,
                                                                  });
                 postData={};
+                var modalEl=document.getElementsByClassName('divmodal');
+                for(let i = 0; i < modalEl.length; i++) {
+                  modalEl[i].remove();
+                }
                 }
                function saving(){
                     if (document.getElementById('surveytitle').value===''){alert('Please Type Survey Title in Survey Page');return;}
@@ -185,7 +189,7 @@ function titleCheck(){
                                           var answer=document.getElementById('A').value;
                                           var body=document.getElementById('modal-body');
                                           var div=document.createElement('div');
-                                           div.setAttribute('class','form-group');
+                                           div.setAttribute('class','form-group divmodal');
                                            div.setAttribute('style','width:400px');
                                            var radio=document.createElement('input');
                                            radio.type='radio';
@@ -210,9 +214,9 @@ function titleCheck(){
                                       var answer=document.getElementById('A').value;
                                                                                 var body=document.getElementById('modal-body');
                                                                                 var div=document.createElement('div');
-                                                                                 div.setAttribute('class','form-group');
+                                                                                 div.setAttribute('class','form-group divmodal');
                                                                                  div.setAttribute('style','width:400px');
-                                                                                 var checkbox=document.createElement('input');
+                                                                                var checkbox=document.createElement('input');
                                                                                 checkbox.type='checkbox';
                                                                                 checkbox.setAttribute('id',`checkbox${count}`); count++;
                                                                                  postData.qType=1;
@@ -249,7 +253,7 @@ function titleCheck(){
                         }
                 </script>
 
-<div class="modal fade modalselect" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position: fixed">
+<div class="modal fade modalselect" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

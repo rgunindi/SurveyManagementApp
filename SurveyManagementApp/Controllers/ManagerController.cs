@@ -12,11 +12,7 @@ namespace SurveyManagementApp.Controllers
     {
         CompanyManager cm = new CompanyManager(new EfCompanyDal());
         PersonelManager pm = new PersonelManager(new EfPersonelDal());
-        SurveyManager sm = new SurveyManager(new EfSurveyDal());
-        QuestionManager qm = new QuestionManager(new EfQuestionDal(), new EfSurveyQuestionDal());
-        SurveyQuestionManager sqm = new SurveyQuestionManager(new EfSurveyQuestionDal(), new EfSurveyDal());
-        SurveyQuestionAnswerManager sqam = new SurveyQuestionAnswerManager(new EfSurveyQuestionAnswerDal(), new EfQuestionDal());
-        
+       
         [HttpGet]
         public ActionResult Index()
         {
@@ -24,6 +20,7 @@ namespace SurveyManagementApp.Controllers
             ViewBag.perList = pm.GetAll();
             return View();
         }
+
         public ActionResult AutoCreate(int id)
         {
             var p = new Personel();
@@ -37,7 +34,7 @@ namespace SurveyManagementApp.Controllers
             return RedirectToAction("CreatePersonel");
         }
 
-       
+
         [HttpGet]
         public ActionResult CreatePersonel()
         {
@@ -46,7 +43,7 @@ namespace SurveyManagementApp.Controllers
             return View();
         }
 
-     
+
         [HttpPost]
         public ActionResult CreatePersonel(Personel p)
         {
@@ -65,6 +62,7 @@ namespace SurveyManagementApp.Controllers
             CreatePersonel();
             return View();
         }
+
         [HttpGet]
         public ActionResult UpdateCompany(int id)
         {
@@ -105,25 +103,8 @@ namespace SurveyManagementApp.Controllers
                 personelUp.CompanyID = personelUp.CompanyID ?? c.CompanyID;
                 pm.Update(personelUp);
             }
+
             return RedirectToAction("index");
-        } 
-        [HttpGet]
-        public ActionResult Survey()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Survey(List<string> values,string surveyTitle, string qType,string question,bool anonym) 
-        {
-            if (values==null||surveyTitle==null||qType==null||question==null)
-            {
-                return View();
-            }
-            sm.Add(surveyTitle);
-            sqm.Add(surveyTitle,qType); 
-            qm.Add(question);
-            sqam.Add(values,qType);
-            return RedirectToAction("Survey");
         }
     }
 }

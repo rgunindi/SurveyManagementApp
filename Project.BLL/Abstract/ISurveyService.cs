@@ -12,7 +12,7 @@ namespace Project.BLL.Abstract
         List<Survey> GetAll();
         Survey GetById(int id);
         void Add(Survey survey);
-        void Add(params string [] survey);
+        void Add(List<string> anonyms,List<string> ids,List<string> personels,string surveyTitle);
         void Update(Survey survey);
         void Delete(int surveyId);
     }

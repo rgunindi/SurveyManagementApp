@@ -8,53 +8,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0479573-7670-4c82-9b83-41a0e94f0c46" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SurveyManagementApp/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.BLL/Abstract/IQuestionService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.BLL/Abstract/ISurveyQuestionAnswerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.BLL/Abstract/ISurveyQuestionService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.BLL/Abstract/ISurveyService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.BLL/Concrete/QuestionManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyQuestionAnswerManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyQuestionManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Abstract/IQuestionDal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfQuestionDal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207121157377_question.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207121157377_question.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207121157377_question.resx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207122004582_question1.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207122004582_question1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207122004582_question1.resx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Question.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Content/custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Content/custom.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Content/custom.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Controllers/SurveyController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Manager/Survey.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Survey/Index.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Survey/SurveyPartial.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/compilerconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/compilerconfig.json.defaults" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207132309104_survey.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207132309104_survey.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.DAL/Migrations/202207132309104_survey.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SurveyManagementApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurveyManagementApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Project.BLL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Project.BLL.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.DAL/Concrete/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/Concrete/Context.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.BLL/Abstract/ISurveyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Abstract/ISurveyService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.BLL/Concrete/Repositories/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Concrete/Repositories/GenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyQuestionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyQuestionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.DAL/Abstract/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/Abstract/IRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.DAL/Concrete/Repositories/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/Concrete/Repositories/GenericRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyQuestionAnswerDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyQuestionAnswerDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyQuestionDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfSurveyQuestionDal.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.DAL/Project.DAL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/Project.DAL.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Company.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Company.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Personel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Personel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Survey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/Survey.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Concrete/SurveyQuestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/SurveyQuestion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Concrete/SurveyQuestionAnswer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Concrete/SurveyQuestionAnswer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.ENTITIES/Project.ENTITIES.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project.ENTITIES/Project.ENTITIES.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/App_Start/BundleConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/App_Start/BundleConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Content/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Content/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Controllers/AdminController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Controllers/ManagerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Controllers/ManagerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Controllers/SurveyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Controllers/SurveyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SurveyManagementApp/SurveyManagementApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/SurveyManagementApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Shared/_AdminLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Shared/_AdminLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Shared/_ManagerLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Shared/_ManagerLayout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Manager/Survey.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Survey/SurveyPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Survey/SurveyPartial.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +135,7 @@
       <workItem from="1657451805862" duration="294000" />
       <workItem from="1657453139587" duration="108797000" />
       <workItem from="1657715408180" duration="982000" />
-      <workItem from="1657734196316" duration="7724000" />
+      <workItem from="1657734196316" duration="13039000" />
     </task>
     <servers />
   </component>
@@ -190,17 +161,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SurveyManagementApp/Controllers/SurveyController.cs</url>
-          <line>27</line>
-          <properties documentPath="C:\Users\xcod3r\Desktop\SurveyApp\server\SurveyManagementApp\SurveyManagementApp\Controllers\SurveyController.cs" initialLine="27" containingFunctionPresentation="method 'Index'">
+          <url>file://$PROJECT_DIR$/Project.BLL/Concrete/SurveyManager.cs</url>
+          <line>73</line>
+          <properties documentPath="C:\Users\xcod3r\Desktop\SurveyApp\server\SurveyManagementApp\Project.BLL\Concrete\SurveyManager.cs" initialLine="73" containingFunctionPresentation="method 'Add'">
             <startOffsets>
-              <option value="1249" />
+              <option value="2133" />
             </startOffsets>
             <endOffsets>
-              <option value="1250" />
+              <option value="2165" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="68" />
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

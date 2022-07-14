@@ -19,6 +19,9 @@ namespace Project.ENTITIES.Concrete
         public Role Role { get; set; }
         public int? CompanyID { get; set; }
         public virtual Company Company { get; set; }
+        public int? SurveyID { get; set; }
+        public virtual Survey Survey{ get; set; }
+        public bool IsAnonymous { get; set; }
         public string LoginCheck=>PersonelName+PersonelSurname+BornDate.ToString("yyyy-MM-dd");
         public string CurrentComp => $"{PersonelName} {PersonelSurname} " +
             $"[{CoalesceException(()=>Company.CompanyName,"unassigned")}] - [{(Role == 0 ? "Personel" : "Manager")}]";

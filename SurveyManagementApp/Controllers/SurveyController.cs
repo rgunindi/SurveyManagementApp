@@ -11,7 +11,7 @@ namespace SurveyManagementApp.Controllers
     {
         PersonelManager pm = new PersonelManager(new EfPersonelDal());
         CompanyManager cm = new CompanyManager(new EfCompanyDal());
-        SurveyManager sm = new SurveyManager(new EfSurveyDal());
+        SurveyManager sm = new SurveyManager(new EfSurveyDal(),new EfPersonelDal());
         QuestionManager qm = new QuestionManager(new EfQuestionDal(), new EfSurveyQuestionDal());
         SurveyQuestionManager sqm = new SurveyQuestionManager(new EfSurveyQuestionDal(), new EfSurveyDal());
         SurveyQuestionAnswerManager sqam = new SurveyQuestionAnswerManager(new EfSurveyQuestionAnswerDal(), new EfQuestionDal());
@@ -24,13 +24,13 @@ namespace SurveyManagementApp.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(List<string> values,string surveyTitle, string qType,string question,List<string> anonyms,List<string> ids,List<string> personels) 
+        public ActionResult Index(string surveyTitle,List<string> values, string qType,string question,List<string> anonyms,List<string> ids,List<string> personels) 
         {
             if (values==null||surveyTitle==null||qType==null||question==null)
             {
                 return View();
             }
-            sm.Add(surveyTitle);
+            sm.Add(anonyms,ids,personels,surveyTitle);
             sqm.Add(surveyTitle,qType); 
             qm.Add(question);
             sqam.Add(values,qType);

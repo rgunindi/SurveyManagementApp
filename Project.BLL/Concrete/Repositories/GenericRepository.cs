@@ -55,6 +55,10 @@ namespace Project.BLL.Concrete.Repositories
         {
             return _obj.SingleOrDefault();
         }
+        public T GetFirstOrDefault(Expression<Func<T, bool>> firstEl)
+        {
+            return  _obj.Where(firstEl).FirstOrDefault();
+        }
     }
 
 }

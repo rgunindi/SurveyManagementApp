@@ -34,8 +34,8 @@ namespace Project.BLL.Concrete
         public void Add(string surveyTitle,string qType)
         {
             
-            var surveyId = _SurveyDal.GetAll().Last().SurveyID;
-
+            var surveyId = _SurveyDal.GetFirstOrDefault(x=>x.SurveyTitle==surveyTitle).SurveyID;
+           
             _sQuestionDal.Add(new SurveyQuestion()
             {
                 SurveyID =surveyId, 

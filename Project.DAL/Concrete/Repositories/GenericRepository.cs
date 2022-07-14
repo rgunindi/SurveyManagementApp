@@ -19,6 +19,7 @@ namespace Project.DAL.Concrete.Repositories
             _obj = c.Set<T>();
         }
 
+     
         public void Add(T entity)
         {
             _obj.Add(entity);
@@ -55,6 +56,10 @@ namespace Project.DAL.Concrete.Repositories
         public T Get(Expression<Func<T, bool>> filter)
         {
             return  _obj.Where(filter).SingleOrDefault();
+        }
+        public T GetFirstOrDefault(Expression<Func<T, bool>> firstEl)
+        {
+            return  _obj.Where(firstEl).FirstOrDefault();
         }
     }
 }
