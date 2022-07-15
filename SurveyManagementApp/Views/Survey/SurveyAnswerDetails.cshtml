@@ -1,0 +1,36 @@
+﻿@using Project.ENTITIES.Concrete
+@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = ViewBag.isAdmin != null ? "~/Views/Shared/_AdminLayout.cshtml" : "~/Views/Shared/_ManagerLayout.cshtml";
+    
+}
+@{
+    var surveyQuestion =(List<Question>) ViewBag.surveyQuestion;
+    var detail =(List<Answer>) ViewBag.detail;
+}
+<h2>Detail Page</h2>
+@{
+    var distincQ = surveyQuestion.Select(x => x.Q).Distinct().ToList();
+    var distincQId = surveyQuestion.Select(x => x.SurveyQuestionID).Distinct().ToList();
+}
+
+    @{ var c = 0; }
+@foreach(var item in distincQ)
+{
+    <h3 class="form-control alert-danger"><i class="fa fa-question-circle" aria-hidden="true"></i> @item</h3>
+    foreach (var answer in detail)
+    {
+        if (distincQId[c]==answer.SurveyQuestionID)
+        {
+            var b = answer.PerAnswer;
+            <p class="form-control alert-info"><i class="fa fa-indent" aria-hidden="true"></i> @answer.PerAnswer</p>
+        }else
+        {
+            distincQId.RemoveAt(c);
+            //break;
+        }
+    }
+    c++;
+}

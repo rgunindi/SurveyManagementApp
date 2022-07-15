@@ -65,12 +65,11 @@
                 <li class="dropdown">
                     @if (Session["UserName"] != null)
                     {
-                        
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="~/flatlab-master/index.html#">
-                        <img alt="" src="~/flatlab-master/img/avatar1_small.jpg">
-                        <span class="username">@Session["User"]</span>
-                        <b class="caret"></b>
-                    </a>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="~/flatlab-master/index.html#">
+                            <img alt="" src="~/flatlab-master/img/avatar1_small.jpg">
+                            <span class="username">@Session["User"]</span>
+                            <b class="caret"></b>
+                        </a>
                     }
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
@@ -121,68 +120,47 @@
                         <i class="fa fa-book"></i>
                         <span>Survey</span>
                     </a>
-                </li>
-
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Charts</span>
-                    </a>
                     <ul class="sub">
                         <li>
-                            <a href="~/flatlab-master/morris.html">Morris</a>
-                        </li>
-                        <li>
-                            <a href="~/flatlab-master/chartjs.html">Chartjs</a>
-                        </li>
-                        <li>
-                            <a href="~/flatlab-master/flot_chart.html">Flot Charts</a>
-                        </li>
-                        <li>
-                            <a href="~/flatlab-master/xchart.html">xChart</a>
+                            <a href="/User/SolveSurvey">Solve Survey</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                        @if (Session["UserName"] != null)
-                        {
-                            <a href="/login/logoutPersonel">
-                        <i class="fa fa-lock"></i>
-                                <span>Logout</span>
-                            </a>
-                        }
-                        else
-                        {
-                    <a href="javascript:;">
-                        <i class="fa fa-user-md"></i>
-                        <span>Login Page</span>
-                    </a>
-                    <ul class="sub">
-                            
-                        <li>
-                            <a href="/Login/index">Admin Login</a>
-                        </li>
-                        <li>
-                            <a href="/Login/UserLogin">User Login</a>
-                        </li>
-                    </ul>
-                        }
+                    @if (Session["UserName"] != null)
+                    {
+                        <a href="/login/logoutPersonel">
+                            <i class="fa fa-lock"></i>
+                            <span>Logout</span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="javascript:;">
+                            <i class="fa fa-user-md"></i>
+                            <span>Login Page</span>
+                        </a>
+                        <ul class="sub">
+
+                            <li>
+                                <a href="/Login/index">Admin Login</a>
+                            </li>
+                            <li>
+                                <a href="/Login/UserLogin">User Login</a>
+                            </li>
+                        </ul>
+                    }
                 </li>
 
-                <!--multi level menu start-->
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-sitemap"></i>
                         <span>Authorization</span>
                     </a>
                 </li>
-                <!--multi level menu end-->
-
             </ul>
-            <!-- sidebar menu end-->
         </div>
     </aside>
-    <!--sidebar end-->
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
@@ -225,7 +203,6 @@
 <script>
 
         //owl carousel
-
         $(document).ready(function () {
             $("#owl-demo").owlCarousel({
                 navigation: true,
@@ -236,7 +213,6 @@
 
             });
         });
-
         //custom select box
 
         $(function () {
@@ -247,7 +223,6 @@
             var owl = $("#owl-demo").data("owlCarousel");
             owl.reinit();
         });
-
     </script>
 
 </body>

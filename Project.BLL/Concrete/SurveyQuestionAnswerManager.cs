@@ -26,7 +26,10 @@ namespace Project.BLL.Concrete
         {
             return _sqaDal.GetById(id);
         }
-
+        public SurveyQuestionAnswer GetByQuestionId(int id)
+        {
+            return _sqaDal.GetFirstOrDefault(x=>x.QuestionID==id);
+        }
         public void Add(SurveyQuestionAnswer sqa)
         {
             _sqaDal.Add(sqa);

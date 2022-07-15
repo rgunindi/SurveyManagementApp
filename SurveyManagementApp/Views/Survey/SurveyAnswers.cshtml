@@ -1,0 +1,65 @@
+﻿@using Project.ENTITIES.Concrete
+@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = ViewBag.isAdmin != null ? "~/Views/Shared/_AdminLayout.cshtml" : "~/Views/Shared/_ManagerLayout.cshtml";
+}
+@{
+    var personel =(IEnumerable<Personel>) ViewBag.surveyInfo[0];
+    var answers=(List<Answer>)ViewBag.surveyInfo[1];
+}
+<h2>Survey & Personnel List</h2>
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Personel Info</th>
+        <th scope="col">Survey ID</th>
+        <th scope="col">Survey Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{
+        int c = 0;
+    }
+    @foreach (var item in personel)
+    {
+        <tr>
+            <th scope="row">
+                @{ ++c; }
+                @c
+            </th>
+            <td>
+                @Html.Label("CurrentComp", @item.CurrentComp)
+            </td >
+        @* @foreach (var iAnswer in answers){} *@
+        @{ var answer1 = answers.Where(x => x.PersonelID == item.PersonelID && x.SurveyID!=item.SurveyID).ToList();}
+        @foreach (var iAnswer in answer1)
+        {
+            var ids=answer1.Where(x=>x.PersonelID==item.PersonelID).Select(x=>x.SurveyID).Distinct().ToList();
+            <td>
+                @foreach(var id in ids)
+                {
+                    @* @Html.Label("SurveyID", id, new { @style = "margin-left:15px;" }) *@
+                    <span class="form-control">@id</span>
+                }
+                @* <span>@iAnswer.SurveyID</span> *@
+            </td>
+            <td >
+                <a href="/Survey/SurveyAnswerDetails/@item.PersonelID" class="btn btn-info"> Show Answers</a>
+            </td>
+            break;
+        }
+        @if(answer1.Count==0)
+            {
+                <td>
+                    @Html.Label("", "Personnel does not solved it survey yet", new {@class = "form-control"}) 
+                </td>
+            }
+        
+        </tr>
+    }
+    </tbody>
+</table>

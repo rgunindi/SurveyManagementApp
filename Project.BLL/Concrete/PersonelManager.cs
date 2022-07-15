@@ -60,7 +60,7 @@ namespace Project.BLL.Concrete
 
         public Personel GetPersonelByUserName(string userName)
         {
-            return _personelDal.Get(x => x.UserName == userName);
+            return _personelDal.GetFirstOrDefault(x => x.UserName == userName);
         }
 
         public Personel GetPersonel(Personel p)

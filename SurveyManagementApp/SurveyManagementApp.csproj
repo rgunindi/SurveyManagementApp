@@ -525,8 +525,11 @@
     <Content Include="Views\Shared\_ManagerLayout.cshtml" />
     <Content Include="Views\Shared\_UserLayout.cshtml" />
     <Content Include="Views\Survey\Index.cshtml" />
+    <Content Include="Views\Survey\SurveyAnswerDetails.cshtml" />
+    <Content Include="Views\Survey\SurveyAnswers.cshtml" />
     <Content Include="Views\Survey\SurveyPartial.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\SolveSurvey.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

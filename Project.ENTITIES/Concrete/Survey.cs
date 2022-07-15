@@ -15,8 +15,6 @@ namespace Project.ENTITIES.Concrete
         public virtual ICollection<SurveyQuestion> SurveyQuestions { get; set; }
         public int? CompanyID { get; set; }
         public virtual Company Company { get; set; }
-        //public int? PersonelID { get; set; }
-        //public virtual Personel Personel { get; set; }
         public virtual ICollection<Personel> SurveyPersonels { get; set; }
         public bool SurveyStatus { get; set; }
 

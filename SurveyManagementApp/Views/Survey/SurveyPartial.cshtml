@@ -164,7 +164,7 @@ function titleCheck(){
                         alert('Please Type Question');
                         return;
                     }
-                    saving();
+                    //saving(); //Hatirlayamadim neden save ettim bi kere daha
                     $.ajax({
                                                                      type: 'POST',
                                                                      url: '@Url.Action("Index","Survey")',
@@ -176,10 +176,13 @@ function titleCheck(){
                                                                         traditional: true,
                                                                  });
                 postData={};
-                var modalEl=document.getElementsByClassName('divmodal');
-                for(let i = 0; i < modalEl.length; i++) {
-                  modalEl[i].remove();
-                }
+                answers=[];
+                count=0;
+                
+                let modalEl=document.getElementsByClassName('divmodal');
+                let values=Array.from(modalEl);
+                 values.forEach((i)=>i.remove());
+                 //document.querySelector('#sendButton').type='submit';
                 }
                function saving(){
                     if (document.getElementById('surveytitle').value===''){alert('Please Type Survey Title in Survey Page');return;}
@@ -187,6 +190,7 @@ function titleCheck(){
                                    if (qtype==='0')
                                        {
                                           var answer=document.getElementById('A').value;
+                                          document.getElementById('A').value='';
                                           var body=document.getElementById('modal-body');
                                           var div=document.createElement('div');
                                            div.setAttribute('class','form-group divmodal');
@@ -201,7 +205,7 @@ function titleCheck(){
                                            answers.push(answer);
                                           
                                            var label=document.createElement('label');
-                                           label.setAttribute('for',`'rad'+count`);
+                                           label.setAttribute('for',`'rad'+${count}`);
                                            label.setAttribute('class','bg-success');
                                            label.innerHTML=answer;
                                            div.appendChild(radio);
@@ -211,7 +215,8 @@ function titleCheck(){
                                            console.log(postData);  
                                        }
                                    else if (qtype==='1'){
-                                      var answer=document.getElementById('A').value;
+                                                                                var answer=document.getElementById('A').value;
+                                                                                document.getElementById('A').value='';
                                                                                 var body=document.getElementById('modal-body');
                                                                                 var div=document.createElement('div');
                                                                                  div.setAttribute('class','form-group divmodal');
@@ -225,7 +230,7 @@ function titleCheck(){
                                                                                  answers.push(answer);
                                                                                 
                                                                                  var label=document.createElement('label');
-                                                                                 label.setAttribute('for',`'checkbox'+count`);
+                                                                                 label.setAttribute('for',`checkbox${count}`);
                                                                                  label.setAttribute('class','bg-success');
                                                                                  label.innerHTML=answer;
                                                                                  div.appendChild(checkbox);
@@ -281,7 +286,7 @@ function titleCheck(){
                    
                 </div>
                 <div clas="modal-footer">
-                    <button type="reset" onclick="send()" class="btn btn-info" data-bs-dismiss="modal" aria-label="Close">Create Question</button>
+                    <button id="sendButton" onclick="send()" class="btn btn-info" data-bs-dismiss="modal" aria-label="Close">Create Question</button>
                 </div>
             </form>
         </div>

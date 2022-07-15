@@ -54,6 +54,7 @@
     <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICompanyDal.cs" />
     <Compile Include="Abstract\IPersonelDal.cs" />
+    <Compile Include="Abstract\IAnswerDal .cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IQuestionDal.cs" />
     <Compile Include="Abstract\ISurveyDal.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCompanyDal.cs" />
     <Compile Include="EntityFramework\EfPersonelDal.cs" />
+    <Compile Include="EntityFramework\EfAnswerDal.cs" />
     <Compile Include="EntityFramework\EfQuestionDal.cs" />
     <Compile Include="EntityFramework\EfSurveyDal.cs" />
     <Compile Include="EntityFramework\EfSurveyQuestionAnswerDal.cs" />
@@ -103,6 +105,10 @@
     <Compile Include="Migrations\202207132309104_survey.cs" />
     <Compile Include="Migrations\202207132309104_survey.designer.cs">
       <DependentUpon>202207132309104_survey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207141935460_answer.cs" />
+    <Compile Include="Migrations\202207141935460_answer.designer.cs">
+      <DependentUpon>202207141935460_answer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207132309104_survey.resx">
       <DependentUpon>202207132309104_survey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207141935460_answer.resx">
+      <DependentUpon>202207141935460_answer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

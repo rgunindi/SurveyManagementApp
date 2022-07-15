@@ -36,11 +36,8 @@ namespace Project.BLL.Concrete
         public void Add(List<string> anonyms, List<string> ids, List<string> personels, string surveyTitle)
         {
             int count = 0;
-            foreach (var p in personels)
+            if (personels==null)
             {
-                count++;
-                var pId = Convert.ToInt32(p);
-                @return:
                 var sId = _surveyDal.GetFirstOrDefault(x => x.SurveyTitle == surveyTitle).SurveyID;
                 if (sId == null || sId == 0)
                 {
@@ -49,25 +46,44 @@ namespace Project.BLL.Concrete
                         SurveyTitle = surveyTitle, SurveyStatus = true
                     };
                     _surveyDal.Add(survey);
+                }
+                return;
+            }
+            foreach (var p in personels)
+            {
+                count++;
+                var pId = Convert.ToInt32(p);
+                @return:
+                var s = _surveyDal.GetFirstOrDefault(x => x.SurveyTitle == surveyTitle);
+                if (s==null)
+                {
+                    var survey = new Survey()
+                    {
+                        SurveyTitle = surveyTitle, SurveyStatus = true
+                    };
+                    _surveyDal.Add(survey);
                     goto @return;
                 }
-
+                var sId = s.SurveyID;
                 var personel = _personelDal.GetById(pId);
                 personel.SurveyID = Convert.ToInt32(sId);
                 int idCount = 0;
                 bool isAnonym = false;
-                foreach (var i in ids)
+                if (anonyms != null)
                 {
-                    idCount++;
-                    isAnonym = anonyms.Contains(i);
-                    if (isAnonym)
+                    foreach (var i in ids)
                     {
-                        if (count == idCount)
+                        idCount++;
+                        isAnonym = anonyms.Contains(i);
+                        if (isAnonym)
                         {
-                            break;
-                        }
+                            if (count == idCount)
+                            {
+                                break;
+                            }
 
-                        isAnonym = false;
+                            isAnonym = false;
+                        }
                     }
                 }
 

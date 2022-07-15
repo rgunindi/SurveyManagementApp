@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\Admin.cs" />
+    <Compile Include="Concrete\Answer.cs" />
     <Compile Include="Concrete\Company.cs" />
     <Compile Include="Concrete\Personel.cs" />
     <Compile Include="Concrete\Question.cs" />

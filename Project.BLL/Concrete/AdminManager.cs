@@ -21,7 +21,7 @@ namespace Project.BLL.Concrete
 
         public Admin GetAdminByUserName(string userName)
         {
-           return _adminDal.Get(x => x.AdminName == userName);
+           return _adminDal.GetFirstOrDefault(x => x.AdminName == userName);
         }
     }
 }

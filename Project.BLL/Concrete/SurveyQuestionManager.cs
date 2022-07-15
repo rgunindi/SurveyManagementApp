@@ -11,10 +11,10 @@ namespace Project.BLL.Concrete
         ISurveyQuestionDal _sQuestionDal;
         ISurveyDal _SurveyDal;
 
-        public SurveyQuestionManager(ISurveyQuestionDal surveyQDal,ISurveyDal surveyDal)
+        public SurveyQuestionManager(ISurveyQuestionDal surveyQDal, ISurveyDal surveyDal)
         {
-            _sQuestionDal=surveyQDal;
-            _SurveyDal=surveyDal;
+            _sQuestionDal = surveyQDal;
+            _SurveyDal = surveyDal;
         }
 
         public List<SurveyQuestion> GetAll()
@@ -27,25 +27,30 @@ namespace Project.BLL.Concrete
             return _sQuestionDal.GetById(id);
         }
 
+        public List<SurveyQuestion> GetBySurveyId(int id)
+        {
+            return _sQuestionDal.GetAll(x => x.SurveyID == id);
+        }
         public void Add(SurveyQuestion survey)
         {
             _sQuestionDal.Add(survey);
         }
-        public void Add(string surveyTitle,string qType)
+
+        public void Add(string surveyTitle, string qType)
         {
-            
-            var surveyId = _SurveyDal.GetFirstOrDefault(x=>x.SurveyTitle==surveyTitle).SurveyID;
-           
+            var surveyId = _SurveyDal.GetFirstOrDefault(x => x.SurveyTitle == surveyTitle).SurveyID;
+
             _sQuestionDal.Add(new SurveyQuestion()
             {
-                SurveyID =surveyId, 
-                SurveyQuestionType = qType=="0"?SurveyQuestionType.SingleChoiceQuestion:qType=="1"?SurveyQuestionType.MultipleChoiceQuestions:SurveyQuestionType.OpenEndedQuestion,
+                SurveyID = surveyId,
+                SurveyQuestionType = qType == "0" ? SurveyQuestionType.SingleChoiceQuestion :
+                    qType == "1" ? SurveyQuestionType.MultipleChoiceQuestions : SurveyQuestionType.OpenEndedQuestion,
             });
         }
 
-        public  void Update(SurveyQuestion survey)
+        public void Update(SurveyQuestion survey)
         {
-           _sQuestionDal.Update(survey);
+            _sQuestionDal.Update(survey);
         }
 
         public void Delete(int id)

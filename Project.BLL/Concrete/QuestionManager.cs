@@ -18,9 +18,14 @@ namespace Project.BLL.Concrete
 
         public List<Question> GetAll()
         {
-            return _sQuestionDal.GetAll().ToList();
+            return _sQuestionDal.GetAll();
         }
+        public List<Question> GetAll(List<Answer> detail)
+        {
+            var sqd = _surveyqDal.GetAll();
 
+            return (from answer in detail where sqd.Any(x => x.SurveyQuestionID == answer.SurveyQuestionID) select _sQuestionDal.Get(x => x.SurveyQuestionID == answer.SurveyQuestionID)).ToList();
+        }
         public Question GetById(int id)
         {
             return _sQuestionDal.GetById(id);
@@ -45,6 +50,11 @@ namespace Project.BLL.Concrete
         public void Update(Question survey)
         {
             _sQuestionDal.Update(survey);
+        }
+
+        public Question GetBySurveyQId(int sQSurveyQuestionId)
+        {
+            return _sQuestionDal.Get(x=>x.SurveyQuestionID==sQSurveyQuestionId);
         }
     }
 }

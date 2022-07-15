@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAdminService.cs" />
+    <Compile Include="Abstract\IAnswerService.cs" />
     <Compile Include="Abstract\IQuestionService.cs" />
     <Compile Include="Abstract\ISurveyQuestionAnswerService.cs" />
     <Compile Include="Abstract\ISurveyQuestionService.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Abstract\IPersonelService.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
+    <Compile Include="Concrete\AnswerManager.cs" />
     <Compile Include="Concrete\QuestionManager.cs" />
     <Compile Include="Concrete\SurveyQuestionAnswerManager.cs" />
     <Compile Include="Concrete\SurveyQuestionManager.cs" />

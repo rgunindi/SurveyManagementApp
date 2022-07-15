@@ -11,6 +11,7 @@ namespace Project.BLL.Abstract
     {
         List<SurveyQuestion> GetAll();
         SurveyQuestion GetById(int id);
+        List<SurveyQuestion> GetBySurveyId(int id);
         void Add(SurveyQuestion surveyQuestion);
         void Add( string surveyTitle,string qType);
         void Update(SurveyQuestion surveyQuestion);

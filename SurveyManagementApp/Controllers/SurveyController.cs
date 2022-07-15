@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Dynamic;
 using System.Web.Mvc;
 using Project.BLL.Concrete;
 using Project.DAL.EntityFramework;
@@ -15,12 +16,14 @@ namespace SurveyManagementApp.Controllers
         QuestionManager qm = new QuestionManager(new EfQuestionDal(), new EfSurveyQuestionDal());
         SurveyQuestionManager sqm = new SurveyQuestionManager(new EfSurveyQuestionDal(), new EfSurveyDal());
         SurveyQuestionAnswerManager sqam = new SurveyQuestionAnswerManager(new EfSurveyQuestionAnswerDal(), new EfQuestionDal());
-        
+        AnswerManager am = new AnswerManager(new EfAnswerDal(),new EfPersonelDal());
         [HttpGet]
-        public ActionResult Index(List<Personel> p=null)
+        public ActionResult Index(string message="")
         {
             ViewBag.CompanyList = cm.GetAll();
             ViewBag.perList = pm.GetAll();
+            ViewBag.SurveyList = sm.GetAll();
+            ViewBag.message = message;
             return View();
         }
         [HttpPost]
@@ -35,17 +38,42 @@ namespace SurveyManagementApp.Controllers
             qm.Add(question);
             sqam.Add(values,qType);
             ViewBag.surveyTitle = surveyTitle;
-            return View();
+            ViewBag.message="Survey Created Added Question";
+            return RedirectToAction("Index", "Survey", new { message = "Survey Created Added Question" });
         }
         public PartialViewResult SurveyPartial()
         {
             return PartialView();
         }
-        public ActionResult ListPersonel(int CompanyID)
+
+        [HttpGet]
+        public ActionResult SurveyAnswers()
         {
-            var p= (List<Personel>) pm.GetAllPersonelByCompanyID(CompanyID);
-            Index(p);
-            return View("Index",p);
+            var isAdmin= User.IsInRole("Admin");
+            if (isAdmin)
+            {
+                ViewBag.isAdmin = true;
+                var surveyInfo = am.GetAllInfo();
+                ViewBag.surveyInfo = surveyInfo; 
+                return View();
+            }
+            var u = (string) Session["UserName"];
+            if (u == null)
+            {return RedirectToAction("UserLogin", "Login");}
+            var per=pm.GetPersonelByUserName(u);
+            var surveyInfo2 = am.GetCompaniesByUserName(per);
+            return View(surveyInfo2);
+        }
+
+        [HttpGet]
+        public ActionResult SurveyAnswerDetails(int id)
+        {
+            var detail = am.GetByPersonelIdList(id);
+            var surveyQuestion = qm.GetAll(detail);
+            ViewBag.surveyQuestion = surveyQuestion;
+            ViewBag.detail = detail;
+             
+            return View();
         }
     }
 }

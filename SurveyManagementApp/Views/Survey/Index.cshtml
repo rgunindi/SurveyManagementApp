@@ -7,11 +7,17 @@
 @{
     int c = 0;
     var perList = ViewBag.perList;
+    var SurveyList = ViewBag.SurveyList;
     var personels = new List<Personel>();
     int perCount = 0;
 }
 
-
+@if (ViewBag.message != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.message
+    </div>
+}
 <h2>Create Survey</h2>
 <br/>
     <div class="form-group">
@@ -19,6 +25,12 @@
 
             @Html.Label("Survey Title")
             @Html.TextBoxFor(x => new Survey() {}.SurveyTitle, new {@class = "form-control", id = "SurveyTitle"})
+              @if (SurveyList.Count > 0)
+                            {
+                                @Html.Label("Created Surveys")
+                                @Html.DropDownList("SurveyID",
+                                    new SelectList(SurveyList, "SurveyID", "SurveyTitle"), new {@class = "form-control"})
+                            }
             <input type="button" style="margin-top:15px; display: block" id="openDialog" class="btn btn-success" data-toggle="modal"
                    data-target="#Modal" value="Add Question" onclick="titleCheck()" /> 
         </div>
