@@ -23,6 +23,18 @@ namespace SurveyManagementApp
                url: "{Manager}/{action}/{id}",
                defaults: new { controller = "Admin", action = "Index", id = UrlParameter.Optional }
            );
+
+        //    routes.MapRoute(
+        //      "Admin_default",
+        //      "Admin/{controller}/{action}/{id}",
+        //      new { action = "Index", id = UrlParameter.Optional }
+        //  );
+        //    routes.MapRoute(
+        //        "Login_default",
+        //        "Login/{controller}/{action}/{id}",
+        //        new { action = "Index", id = UrlParameter.Optional }
+        //    );
+        //
         }
     }
 }

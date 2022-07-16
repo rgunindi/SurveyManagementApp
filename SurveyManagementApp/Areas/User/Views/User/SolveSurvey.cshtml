@@ -1,0 +1,121 @@
+﻿@using Project.ENTITIES.Concrete
+@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@{
+    if (Session["UserName"]==null)
+    {
+        Response.Redirect("/Login/UserLogin");
+    }
+}
+@{
+    if (ViewBag.NoData!=null)
+    {
+        Response.Redirect("/User");
+    }
+    var surveyQuestions = (List<SurveyQuestion>) ViewBag.surveyQuestions;
+    var questions = ((IEnumerable<Question>) ViewBag.questions).ToArray();
+    var surveyQAnswers = (List<SurveyQuestionAnswer>) ViewBag.surveyQuestionAnswers;
+}
+
+<h2>Welcome! @ViewBag.personel.PersonelName - You are solving the @ViewBag.survey.SurveyTitle survey.</h2>
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">Question Id</th>
+        <th scope="col">Question</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{
+        int c = 0;
+        int i = 0;
+    }
+    @foreach (var item in surveyQuestions)
+    {
+        <tr>
+            <th scope="row">
+                @{ ++c; }
+                @c
+            </th>
+            <td>@questions[i].Q</td>
+            <td>
+                @if ((int) item.SurveyQuestionType == 0)
+                {
+                    foreach (var answer in surveyQAnswers)
+                    {
+                        if (answer.QuestionID==questions[i].QuestionID)
+                        {
+                        @Html.RadioButton(@item.SurveyQuestionID.ToString(), @answer.Answer, new { @style = "margin-left:15px;",id=@answer.SurveyQuestionAnswerID })
+                        @Html.Label(@answer.SurveyQuestionAnswerID.ToString(), @answer.Answer)
+                        }
+                    }
+                    <br/>
+                    @Html.Label("comment","Optionally Comment :" , new { @style = "margin-left:15px;" })
+                    <textarea style="width: 95%;margin-left: 15px;" id=@item.SurveyQuestionID name="comment"></textarea>
+                }
+                else if ((int) item.SurveyQuestionType == 1)
+                {
+                    foreach (var answer in surveyQAnswers)
+                    {
+                        if (answer.QuestionID == questions[i].QuestionID)
+                        {
+                                <label style="margin-left: 15px;">
+                                <input type="checkbox" name="dropdown-group" id=@item.SurveyQuestionID value=@answer.Answer />
+                                @answer.Answer
+                            </label>
+                        @* @Html.CheckBox(@answer.SurveyQuestionAnswerID.ToString(), @answer.Answer) *@
+                        @* @Html.Label(@answer.SurveyQuestionAnswerID.ToString(), @answer.Answer,new {id=@answer.SurveyQuestionAnswerID}) *@
+                        }
+                    }
+                    <br/>
+                    @Html.Label("comment","Optionally Comment :", new { @style = "margin-left:15px;"})
+                   <textarea style="width: 95%;margin-left: 15px;" id=@item.SurveyQuestionID name="comment"></textarea>
+                }
+                else
+                {
+                    <textarea style="width: 95%; margin-left: 15px;" id=@item.SurveyQuestionID name="comment"></textarea>
+                    // new {@class = "form-control"})
+                }
+            </td>
+        </tr>
+            i++;
+    }
+    </tbody>
+</table>
+<input type="submit" value="Send Answers" onclick="send()" class="btn btn-success" />
+
+<script type="text/javascript">
+  let postData={};
+function send(){
+       var checkbox= document.querySelectorAll('input[type="checkbox"]');
+       	var radio=document.querySelectorAll('input[type="radio"]');
+       	var comment=document.querySelectorAll('textarea');
+       	let a=Array.from(checkbox);
+       	let b= Array.from(radio);
+       	let c= Array.from(comment);
+       	a=a.filter((x)=>x.checked);
+       	b=b.filter((x)=>x.checked);
+       	c=c.filter(x=>x.value);
+        let ids=[].concat(a.map(x=>x.id),b.map(x=>x.name),c.map(x=>x.id));
+       	let values=[].concat(a.map(x=>x.value),b.map(x=>x.value),c.map(x=>x.value));
+        postData.ids=ids;
+        postData.values=values;
+        postData.surveyID=@ViewBag.survey.SurveyID;
+            $.ajax({
+                                                                                type: 'POST',
+                                                                                url: '@Url.Action("SolveSurvey","User")',
+                                                                                data: postData,
+                                                                                success: function (data) {
+                                                                                    alert('Success');
+                                                                                },
+                                                                                dataType: 'json',
+                                                                                   traditional: true,
+                                                                            });
+                           postData={}; 
+}
+</script>

@@ -145,6 +145,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Login\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Login\LoginAreaRegistration.cs" />
+    <Compile Include="Areas\Manager\Controllers\ManagerController.cs" />
+    <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
+    <Compile Include="Areas\Survey\Controllers\SurveyController.cs" />
+    <Compile Include="Areas\Survey\SurveyAreaRegistration.cs" />
+    <Compile Include="Areas\User\Controllers\UserController.cs" />
+    <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ErrorPage.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -489,6 +499,36 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="flatlab-master\LICENSE" />
     <Content Include="flatlab-master\README.md" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AddCompany.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\CreatePersonel.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\PersonelList.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\UpdateCompany.cshtml" />
+    <Content Include="Areas\Manager\Views\web.config" />
+    <Content Include="Areas\User\Views\web.config" />
+    <Content Include="Areas\Survey\Views\web.config" />
+    <Content Include="Areas\Manager\Views\Manager\CreatePersonel.cshtml" />
+    <Content Include="Areas\Manager\Views\Manager\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\Manager\UpdateCompany.cshtml" />
+    <Content Include="Areas\Manager\Views\Shared\_ManagerLayout.cshtml" />
+    <Content Include="Areas\Survey\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Survey\Views\Shared\_ManagerLayout.cshtml" />
+    <Content Include="Areas\Survey\Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Areas\Survey\Views\Survey\Index.cshtml" />
+    <Content Include="Areas\Survey\Views\Survey\SurveyAnswerDetails.cshtml" />
+    <Content Include="Areas\Survey\Views\Survey\SurveyAnswers.cshtml" />
+    <Content Include="Areas\Survey\Views\Survey\SurveyPartial.cshtml" />
+    <Content Include="Areas\User\Views\User\Index.cshtml" />
+    <Content Include="Areas\User\Views\User\SolveSurvey.cshtml" />
+    <Content Include="Areas\User\Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Areas\Login\Views\web.config" />
+    <Content Include="Areas\Login\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Login\Views\Shared\_ManagerLayout.cshtml" />
+    <Content Include="Areas\Login\Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Areas\Login\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Login\Views\Login\UserLogin.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -553,9 +593,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin" />
-    <Folder Include="Areas\Manager" />
-    <Folder Include="Areas\Personnel" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Login\Data\" />
+    <Folder Include="Areas\Manager\Data\" />
+    <Folder Include="Areas\Survey\Data\" />
+    <Folder Include="Areas\User\Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
