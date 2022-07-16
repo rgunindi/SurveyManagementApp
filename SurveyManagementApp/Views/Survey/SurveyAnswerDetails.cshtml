@@ -4,33 +4,90 @@
 @{
     ViewBag.Title = "title";
     Layout = ViewBag.isAdmin != null ? "~/Views/Shared/_AdminLayout.cshtml" : "~/Views/Shared/_ManagerLayout.cshtml";
-    
+
 }
 @{
-    var surveyQuestion =(List<Question>) ViewBag.surveyQuestion;
-    var detail =(List<Answer>) ViewBag.detail;
+    var surveyQuestion = (List<Question>) ViewBag.surveyQuestion;
+    var detail = (List<Answer>) ViewBag.detail;
 }
 <h2>Detail Page</h2>
 @{
+    var d = surveyQuestion.Distinct().ToList();
     var distincQ = surveyQuestion.Select(x => x.Q).Distinct().ToList();
     var distincQId = surveyQuestion.Select(x => x.SurveyQuestionID).Distinct().ToList();
+
 }
 
-    @{ var c = 0; }
-@foreach(var item in distincQ)
+@{
+    var c = 0;
+    var id = 0;
+
+}
+@{ List<Answer> del = new List<Answer>(); }
+
+@foreach (var item in d)
 {
-    <h3 class="form-control alert-danger"><i class="fa fa-question-circle" aria-hidden="true"></i> @item</h3>
-    foreach (var answer in detail)
+    foreach (var pItem in detail)
     {
-        if (distincQId[c]==answer.SurveyQuestionID)
+        if (item.SurveyQuestionID == pItem.SurveyQuestionID)
         {
-            var b = answer.PerAnswer;
-            <p class="form-control alert-info"><i class="fa fa-indent" aria-hidden="true"></i> @answer.PerAnswer</p>
-        }else
-        {
-            distincQId.RemoveAt(c);
-            //break;
+            del.Add(pItem);
         }
     }
+}
+@{bool status = false;var sid = 0;}
+@foreach (var item in distincQ)
+{
+    foreach (var answer in detail)
+    {
+        if (distincQId[c] == answer.SurveyQuestionID)
+        {
+             if (id == 0) 
+             { 
+                      <h2 class="alert-warning">Survey Id @answer.SurveyID</h2>
+             }
+            if (id != 0 && answer.SurveyQuestionID != id)
+            {
+                status = false;
+                if (sid!=answer.SurveyID)
+                {
+                    <h2>Next Survey</h2> <h2 class="alert-warning">Survey Id @answer.SurveyID</h2>
+                }
+   
+            }
+                if (status==false)
+                {
+                <h3 class="form-control alert-danger">
+                    <i class="fa fa-question-circle" aria-hidden="true"></i> @item
+                </h3>
+                }
+                status = true;
+            <p class="form-control alert-info">
+                <i class="fa fa-indent" aria-hidden="true"></i> @answer.PerAnswer
+            </p>
+        }
+        sid = answer.SurveyID;
+        id = answer.SurveyQuestionID;
+    }
+    //detail.RemoveAll(x=>del.Contains(x));
     c++;
 }
+
+<style>
+  h2 {position: relative}
+  
+  h2:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    transform:  translateX(-50%);
+    bottom: -60px;
+    background-image: radial-gradient( ellipse, #000 2px, #000 3px, transparent 3px) ;
+      background-size: 20px 20px;
+      background-position: 0px 0;
+    background-repeat: repeat-x;
+  }  
+</style>

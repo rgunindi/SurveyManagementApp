@@ -52,7 +52,7 @@ namespace SurveyManagementApp.Controllers
             // if (!ModelState.IsValid) return View();
             var obj = pm.GetPersonel(p);
             if (obj == null) return View();
-            FormsAuthentication.SetAuthCookie(obj.UserName, false);
+            FormsAuthentication.SetAuthCookie(obj.UserName, true);
             Session["UserName"] = obj.UserName;
             Session["User"] = obj.FullName;
             return RedirectToAction("index", obj.Role==Role.Manager ? "Manager" : "User");

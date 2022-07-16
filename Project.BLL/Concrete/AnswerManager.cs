@@ -36,14 +36,14 @@ namespace Project.BLL.Concrete
         public dynamic GetAllInfo()
         {
             
-            var answers = _answerDal.GetAll();
-            var List=answers.Select(i=> _personelDal.GetById(i.PersonelID)).ToList().Distinct(); 
             // var List = answers.Select(iAnswer => personels.Where(x => x.PersonelID == iAnswer.PersonelID)
             //         .Select(x => new {x.PersonelID, x.CurrentComp, x.SurveyID,x.IsAnonymous,})
             //         .ToList())
             //     .Cast<dynamic>()
             //     .ToList();
-            object[] obj={List,answers};
+            var answers = _answerDal.GetAll();
+            var list=answers.Select(i=> _personelDal.GetById(i.PersonelID)).ToList().Distinct(); 
+            object[] obj={list,answers};
             return obj;
         }
 
@@ -54,6 +54,13 @@ namespace Project.BLL.Concrete
 
         public List<Answer> GetByPersonelIdList(int id)
         {
+            var aa = _answerDal.GetAll(x=>x.PersonelID==id).Select(x=>x.SurveyQuestionID).Distinct().ToList();
+            var bb = new List<Answer>();
+            foreach (var item in aa)
+            {
+                bb.Add(_answerDal.GetAll(x => x.PersonelID == id && x.SurveyQuestionID == item).FirstOrDefault());
+            }
+            _answerDal.GetAll().ForEach(i=>aa.Contains(i.SurveyQuestionID));
             return _answerDal.GetAll(x=>x.PersonelID==id).ToList();
         }
 
@@ -69,7 +76,7 @@ namespace Project.BLL.Concrete
                 return null;
             }
             var personels = _personelDal.GetAll(x => x.CompanyID == per.CompanyID).Where(x=>x.SurveyID==per.SurveyID);
-            var answers = _answerDal.GetAll(x => x.SurveyID == per.SurveyID);
+            var answers = _answerDal.GetAll();
             var result = from a in answers
                          join p in personels
                          on a.PersonelID equals p.PersonelID
@@ -81,7 +88,12 @@ namespace Project.BLL.Concrete
                              p.IsAnonymous,
                              p.SurveyID,
                          };
-            return result;
+            foreach (var VARIABLE in result)
+            {
+                var c = VARIABLE;
+            }
+            object[] obj={personels,answers,result}; 
+            return obj;
         }
     }
 }

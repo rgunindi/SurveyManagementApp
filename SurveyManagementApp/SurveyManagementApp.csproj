@@ -553,6 +553,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin" />
+    <Folder Include="Areas\Manager" />
+    <Folder Include="Areas\Personnel" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

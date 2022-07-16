@@ -31,7 +31,7 @@ namespace SurveyManagementApp.Controllers
         {
             if (values==null||surveyTitle==null||qType==null||question==null)
             {
-                return View();
+               return RedirectToAction("Index", "Survey", new { message = "Survey Created Added Question" });
             }
             sm.Add(anonyms,ids,personels,surveyTitle);
             sqm.Add(surveyTitle,qType); 
@@ -62,6 +62,8 @@ namespace SurveyManagementApp.Controllers
             {return RedirectToAction("UserLogin", "Login");}
             var per=pm.GetPersonelByUserName(u);
             var surveyInfo2 = am.GetCompaniesByUserName(per);
+            ViewBag.surveyInfo = surveyInfo2;
+            
             return View(surveyInfo2);
         }
 

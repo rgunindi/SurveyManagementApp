@@ -12,12 +12,7 @@
     int perCount = 0;
 }
 
-@if (ViewBag.message != null)
-{
-    <div class="alert alert-success">
-        @ViewBag.message
-    </div>
-}
+
 <h2>Create Survey</h2>
 <br/>
     <div class="form-group">
@@ -29,7 +24,7 @@
                             {
                                 @Html.Label("Created Surveys")
                                 @Html.DropDownList("SurveyID",
-                                    new SelectList(SurveyList, "SurveyID", "SurveyTitle"), new {@class = "form-control"})
+                                    new SelectList(SurveyList, "SurveyID", "SurveyTitle"), new {@class = "form-control",id="createdSurvey",onchange="getCreatedSurvey()"})
                             }
             <input type="button" style="margin-top:15px; display: block" id="openDialog" class="btn btn-success" data-toggle="modal"
                    data-target="#Modal" value="Add Question" onclick="titleCheck()" /> 
@@ -90,14 +85,19 @@
         </table>
 
     </div>
-<a style="margin:15px" href="/Survey/AssignSurvey" class="btn btn-danger hover form-group">Go Assign Survey</a>
 
 <script type="text/javascript">
-       jQuery.event.special.touchstart = {
-            setup: function( _, ns, handle ) {
-                this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
-            }
-          };
+       // jQuery.event.special.touchstart = {
+       //      setup: function( _, ns, handle ) {
+       //          this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+       //      }
+       //    };
+       function getCreatedSurvey(){
+           var a=document.querySelectorAll('[id="createdSurvey"]')[0].selectedIndex+1;
+            var b=`#createdSurvey > option:nth-child(${a})`;
+            let v=document.querySelector(b).innerHTML;
+           $('#SurveyTitle').val(v);
+       }
 </script>
 @Html.Action("SurveyPartial", "Survey")
 

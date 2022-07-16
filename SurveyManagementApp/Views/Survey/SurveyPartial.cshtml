@@ -164,7 +164,10 @@ function titleCheck(){
                         alert('Please Type Question');
                         return;
                     }
-                    //saving(); //Hatirlayamadim neden save ettim bi kere daha
+                     if (document.querySelector('#QType').value === '2') {
+                         
+                    saving(); //Hatirlayamadim neden save ettim bi kere daha
+                     }
                     $.ajax({
                                                                      type: 'POST',
                                                                      url: '@Url.Action("Index","Survey")',
