@@ -17,7 +17,7 @@ namespace SurveyManagementApp.Areas.Login
             context.MapRoute(
                 "Login_default",
                 "Login/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new {controller="Login",action = "UserLogin", id = UrlParameter.Optional }
             );
         }
     }

@@ -1,9 +1,9 @@
 ﻿@model dynamic
 
 @{
-    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
-      <form class="form-signin" method="post" action="/Login/UserLogin">
+      <form class="form-signin" method="post" action="/Login/Login/UserLogin">
         <h2 class="form-signin-heading">User-Manager Login Page</h2>
         <div class="login-wrap">
             <input type="text" name="UserName" class="form-control" placeholder="User Name" autofocus>

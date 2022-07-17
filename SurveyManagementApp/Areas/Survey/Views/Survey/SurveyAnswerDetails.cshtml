@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "title";
-    Layout = ViewBag.isAdmin != null ? "~/Views/Shared/_AdminLayout.cshtml" : "~/Views/Shared/_ManagerLayout.cshtml";
+    Layout = Session["AdminName"] != null ? "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml" : "~/Areas/Manager/Views/Shared/_ManagerLayout.cshtml";
 
 }
 @{
@@ -69,7 +69,7 @@
         sid = answer.SurveyID;
         id = answer.SurveyQuestionID;
     }
-    //detail.RemoveAll(x=>del.Contains(x));
+
     c++;
 }
 

@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "UPDATE Company";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h1>Update Company</h1>
@@ -29,7 +29,7 @@
             else
             {
                 @Html.Label("", "There is no unassigned personnel.Please Create Personnel", new { @class = "bg-danger" })
-                <a  style="margin-top:15px"  href="/Admin/CreatePersonel/" class="btn btn-info">Create Personnel</a>
+                <a  style="margin-top:15px"  href="/Admin/Admin/CreatePersonel/" class="btn btn-info">Create Personnel</a>
             }
             <button style="margin-top:15px" class="btn btn-warning hover">Update Company</button>
         </div>

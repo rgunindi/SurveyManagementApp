@@ -74,13 +74,13 @@
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
                         <li>
-                            <a href="/User/index#"><i class=" fa fa-suitcase"></i>Profile</a>
+                            <a href="/User/User/index#"><i class=" fa fa-suitcase"></i>Profile</a>
                         </li>
                         <li>
-                            <a href="/User/index#"><i class="fa fa-cog"></i> Settings</a>
+                            <a href="/User/User/index#"><i class="fa fa-cog"></i> Settings</a>
                         </li>
                         <li>
-                            <a href="/User/index#"><i class="fa fa-bell-o"></i> Notification</a>
+                            <a href="/User/User/index#"><i class="fa fa-bell-o"></i> Notification</a>
                         </li>
                         <li>
                             <a href="/login"><i class="fa fa-key"></i> Log Out</a>
@@ -122,14 +122,14 @@
                     </a>
                     <ul class="sub">
                         <li>
-                            <a href="/User/SolveSurvey">Solve Survey</a>
+                            <a href="/User/User/SolveSurvey">Solve Survey</a>
                         </li>
                     </ul>
                 </li>
                 <li>
                     @if (Session["UserName"] != null)
                     {
-                        <a href="/login/logoutPersonel">
+                        <a href="/login/login/logoutPersonel">
                             <i class="fa fa-lock"></i>
                             <span>Logout</span>
                         </a>
@@ -143,20 +143,13 @@
                         <ul class="sub">
 
                             <li>
-                                <a href="/Login/index">Admin Login</a>
+                                <a href="/login/Login/index">Admin Login</a>
                             </li>
                             <li>
-                                <a href="/Login/UserLogin">User Login</a>
+                                <a href="/login/Login/UserLogin">User Login</a>
                             </li>
                         </ul>
                     }
-                </li>
-
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-sitemap"></i>
-                        <span>Authorization</span>
-                    </a>
                 </li>
             </ul>
         </div>

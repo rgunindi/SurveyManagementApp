@@ -170,7 +170,7 @@ function titleCheck(){
                      }
                     $.ajax({
                                                                      type: 'POST',
-                                                                     url: '@Url.Action("Index","Survey")',
+                                                                     url: '@Url.Action("Index","Survey",new {area="Survey"})',
                                                                      data: postData,
                                                                      success: function (data) {
                                                                          alert('Success');

@@ -5,7 +5,7 @@ using System.Web.Mvc;
 using Project.BLL.ValidationRules;
 using Project.ENTITIES.Concrete;
 
-namespace SurveyManagementApp.Areas.Manager
+namespace SurveyManagementApp.Areas.Manager.Controllers
 {
     [Authorize(Roles = "Manager")]
     public class ManagerController : Controller
@@ -105,6 +105,33 @@ namespace SurveyManagementApp.Areas.Manager
             }
 
             return RedirectToAction("index");
+        }
+        
+        [HttpGet]
+        public ActionResult ChangeInfo()
+        {
+            var u = (string) Session["UserName"];
+            if (u == null)
+            {return RedirectToAction("UserLogin", "Login",new {area="Login"});}
+            var per=pm.GetPersonelByUserName(u);
+            return View(per);
+        }
+
+        [HttpPost]
+        public ActionResult ChangeInfo(Personel p)
+        {
+            var result = new PersonelValidator().Validate(p);
+            if (result.IsValid)
+            {
+                var per = pm.GetById(p.PersonelID);
+                per.PersonelName = p.PersonelName;
+                per.PersonelSurname = p.PersonelSurname; 
+                per.PersonelPassword = p.PersonelPassword;
+                pm.Update(per);
+                return RedirectToAction("Index");
+            }
+                ViewBag.Error = result.Errors;
+                return View(p);
         }
     }
 }

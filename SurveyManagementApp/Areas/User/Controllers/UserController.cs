@@ -2,10 +2,11 @@
 using System.Linq;
 using System.Web.Mvc;
 using Project.BLL.Concrete;
+using Project.BLL.ValidationRules;
 using Project.DAL.EntityFramework;
 using Project.ENTITIES.Concrete;
 
-namespace SurveyManagementApp.Areas.User
+namespace SurveyManagementApp.Areas.User.Controllers
 {
     public class UserController : Controller
     {
@@ -23,7 +24,7 @@ namespace SurveyManagementApp.Areas.User
             var user = (string) Session["UserName"];
             if (user == null)
             {
-                return RedirectToAction("UserLogin", "Login");
+                return RedirectToAction("UserLogin", "Login", new { area = "Login" });
             }
             else
             {
@@ -42,7 +43,7 @@ namespace SurveyManagementApp.Areas.User
             var user = (string) Session["UserName"];
             if (user == null)
             {
-                return RedirectToAction("UserLogin", "Login");
+                return RedirectToAction("UserLogin", "Login", new { area = "Login" });
             }
             else
             {
@@ -83,11 +84,39 @@ namespace SurveyManagementApp.Areas.User
         {
             var u = (string) Session["UserName"];
             if (u == null)
-            {return RedirectToAction("UserLogin", "Login");}
+            {return RedirectToAction("UserLogin", "Login",new {area="Login"});}
             var per=pm.GetPersonelByUserName(u);
             ansM.Add(ids,values,per); 
             pm.Update(per);
-            return RedirectToAction("Index", "User");
+            return RedirectToAction("Index", "User", new { area = "User" });
+        }
+
+        [HttpGet]
+        public ActionResult ChangeInfo()
+        {
+            var u = (string) Session["UserName"];
+            if (u == null)
+            {return RedirectToAction("UserLogin", "Login",new {area="Login"});}
+            var per=pm.GetPersonelByUserName(u);
+            return View(per);
+        }
+
+        [HttpPost]
+        public ActionResult ChangeInfo(Personel p)
+        {
+            var result = new PersonelValidator().Validate(p);
+            if (result.IsValid)
+            {
+                var per = pm.GetById(p.PersonelID);
+                per.PersonelName = p.PersonelName;
+                per.PersonelSurname = p.PersonelSurname; 
+                per.PersonelPassword = p.PersonelPassword;
+                pm.Update(per);
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.Error = result.Errors;
+            return View(p);
         }
     }
 }

@@ -55,7 +55,7 @@
             <i class="fa fa-bars"></i>
         </div>
         <!--logo start-->
-        <a href="/Manager" class="logo">Flat<span>lab</span></a>
+        <a href="/Manager/Manager" class="logo">Flat<span>lab</span></a>
         <!--logo end-->
         <div class="top-nav ">
             <!--search & user info start-->
@@ -73,13 +73,13 @@
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
                         <li>
-                            <a href="/Manager/index#"><i class=" fa fa-suitcase"></i>Profile</a>
+                            <a href="/Manager/Manager/index#"><i class=" fa fa-suitcase"></i>Profile</a>
                         </li>
                         <li>
-                            <a href="/Manager/index#"><i class="fa fa-cog"></i> Settings</a>
+                            <a href="/Manager/Manager/index#"><i class="fa fa-cog"></i> Settings</a>
                         </li>
                         <li>
-                            <a href="/Manager/index#"><i class="fa fa-bell-o"></i> Notification</a>
+                            <a href="/Manager/Manager/index#"><i class="fa fa-bell-o"></i> Notification</a>
                         </li>
                         <li>
                             <a href="/login/logoutPersonel"><i class="fa fa-key"></i> Log Out</a>
@@ -100,7 +100,7 @@
                 @if (User.IsInRole("Manager"))
                 {
                     <li>
-                        <a class="active" href="/Manager/index">
+                        <a class="active" href="/Manager/Manager/index">
                             <i class="fa fa-dashboard"></i>
                             <span>Company</span>
                         </a>
@@ -108,7 +108,7 @@
                 }
 
                 <li class="sub-menu">
-                    <a href="/Manager/CreatePersonel">
+                    <a href="/Manager/Manager/CreatePersonel">
                         <i class="fa fa-laptop"></i>
                         <span>Personel</span>
                     </a>
@@ -121,10 +121,10 @@
                     </a>
                     <ul class="sub">
                         <li>
-                            <a href="/Survey">Create Survey</a>
+                            <a href="/Survey/Survey">Create Survey</a>
                         </li>
                         <li>
-                            <a href="/Survey/SurveyAnswers">Survey Answers</a>
+                            <a href="/Survey/Survey/SurveyAnswers">Survey Answers</a>
                         </li>
                     </ul>
                 </li>
@@ -136,23 +136,13 @@
                     </a>
                     <ul class="sub">
                         <li>
-                            <a href="/Login/index">Admin Login</a>
+                            <a href="/login/Login/index">Admin Login</a>
                         </li>
                         <li>
-                            <a href="/Login/UserLogin">User Login</a>
+                            <a href="/Login/login/UserLogin">User Login</a>
                         </li>
                     </ul>
                 </li>
-
-                <!--multi level menu start-->
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-sitemap"></i>
-                        <span>Authorization</span>
-                    </a>
-                </li>
-                <!--multi level menu end-->
-
             </ul>
             <!-- sidebar menu end-->
         </div>

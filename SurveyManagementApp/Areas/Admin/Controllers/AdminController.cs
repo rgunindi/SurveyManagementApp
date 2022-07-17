@@ -8,7 +8,7 @@ using Project.ENTITIES.Concrete;
 using System.Web.Mvc;
 using PagedList;
 
-namespace SurveyManagementApp.Areas.Admin
+namespace SurveyManagementApp.Areas.Admin.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller

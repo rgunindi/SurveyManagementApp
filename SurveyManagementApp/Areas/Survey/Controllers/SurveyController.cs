@@ -5,7 +5,7 @@ using Project.BLL.Concrete;
 using Project.DAL.EntityFramework;
 using Project.ENTITIES.Concrete;
 
-namespace SurveyManagementApp.Areas.Survey
+namespace SurveyManagementApp.Areas.Survey.Controllers
 {   
     [Authorize(Roles = "Manager,Admin")]
     public class SurveyController : Controller
@@ -23,7 +23,6 @@ namespace SurveyManagementApp.Areas.Survey
             ViewBag.CompanyList = cm.GetAll();
             ViewBag.perList = pm.GetAll();
             ViewBag.SurveyList = sm.GetAll();
-            ViewBag.message = message;
             return View();
         }
         [HttpPost]
@@ -31,7 +30,7 @@ namespace SurveyManagementApp.Areas.Survey
         {
             if (values==null||surveyTitle==null||qType==null||question==null)
             {
-               return RedirectToAction("Index", "Survey", new { message = "Survey Created Added Question" });
+               return RedirectToAction("Index", "Survey", new { area = "Survey" });
             }
             sm.Add(anonyms,ids,personels,surveyTitle);
             sqm.Add(surveyTitle,qType); 
@@ -39,7 +38,7 @@ namespace SurveyManagementApp.Areas.Survey
             sqam.Add(values,qType);
             ViewBag.surveyTitle = surveyTitle;
             ViewBag.message="Survey Created Added Question";
-            return RedirectToAction("Index", "Survey", new { message = "Survey Created Added Question" });
+            return RedirectToAction("Index", "Survey",new {area="Survey"});
         }
         public PartialViewResult SurveyPartial()
         {
@@ -59,7 +58,7 @@ namespace SurveyManagementApp.Areas.Survey
             }
             var u = (string) Session["UserName"];
             if (u == null)
-            {return RedirectToAction("UserLogin", "Login");}
+            {return RedirectToAction("UserLogin", "Login",new {area="Login"});}
             var per=pm.GetPersonelByUserName(u);
             var surveyInfo2 = am.GetCompaniesByUserName(per);
             ViewBag.surveyInfo = surveyInfo2;

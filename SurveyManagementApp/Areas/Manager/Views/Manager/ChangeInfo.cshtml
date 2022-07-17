@@ -1,0 +1,49 @@
+﻿@model Project.ENTITIES.Concrete.Personel
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerLayout.cshtml";
+
+}
+
+<h2>Change User Info</h2>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <div class="form-group">
+        <div style="width:400px">
+            <div class="input-group">
+                
+            @Html.HiddenFor(x => x.PersonelID)
+            @Html.Label("Name")
+            @Html.TextBoxFor(x => x.PersonelName, new {@class = "form-control"})
+            <div class="bg-important" style="margin:5px; color:orangered;" aria-hidden="true">
+                @Html.ValidationMessageFor(x => x.PersonelName)
+            </div>
+            @Html.Label("Surname")
+            @Html.TextBoxFor(x => x.PersonelSurname, new {@class = "form-control"})
+            <div class="bg-important" style="margin:5px; color:orangered;" aria-hidden="true">
+                @Html.ValidationMessageFor(x => x.PersonelSurname)
+            </div>
+            </div>
+            <div class="input-group">
+                @Html.Label("Password")
+                @Html.TextBoxFor(x => x.PersonelPassword, new {@class = "form-control password", type = "password"})
+                <div class="bg-important" style="margin:5px; color:orangered;" aria-hidden="true">
+                    @Html.ValidationMessageFor(x => x.PersonelPassword)
+                </div>
+            </div>
+            <button style="margin-top:15px" class="btn btn-primary hover">Update Personnel Info</button>
+        </div>
+    </div>
+}
+<script>
+    $(document).ready(function(){
+        $(".password").on("click", function(){
+            $(this).attr("type", "text");
+        });
+        $(".password").on("blur", function(){
+            $(this).attr("type", "password");
+        });
+    });
+</script>

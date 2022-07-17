@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "title";
-    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
 @{
     if (Session["UserName"]==null)
@@ -68,8 +68,6 @@
                                 <input type="checkbox" name="dropdown-group" id=@item.SurveyQuestionID value=@answer.Answer />
                                 @answer.Answer
                             </label>
-                        @* @Html.CheckBox(@answer.SurveyQuestionAnswerID.ToString(), @answer.Answer) *@
-                        @* @Html.Label(@answer.SurveyQuestionAnswerID.ToString(), @answer.Answer,new {id=@answer.SurveyQuestionAnswerID}) *@
                         }
                     }
                     <br/>
@@ -79,7 +77,6 @@
                 else
                 {
                     <textarea style="width: 95%; margin-left: 15px;" id=@item.SurveyQuestionID name="comment"></textarea>
-                    // new {@class = "form-control"})
                 }
             </td>
         </tr>
@@ -108,7 +105,7 @@ function send(){
         postData.surveyID=@ViewBag.survey.SurveyID;
             $.ajax({
                                                                                 type: 'POST',
-                                                                                url: '@Url.Action("SolveSurvey","User")',
+                                                                                url: '@Url.Action("SolveSurvey","User",new {area="User"})',
                                                                                 data: postData,
                                                                                 success: function (data) {
                                                                                     alert('Success');

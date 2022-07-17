@@ -147,21 +147,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Login\Controllers\LoginController.cs" />
     <Compile Include="Areas\Login\LoginAreaRegistration.cs" />
+    <Compile Include="Areas\Manager\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Manager\Controllers\ManagerController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="Areas\Survey\Controllers\SurveyController.cs" />
     <Compile Include="Areas\Survey\SurveyAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\UserController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ErrorPage.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ManagerController.cs" />
-    <Compile Include="Controllers\SurveyController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,6 +165,10 @@
     <Compile Include="Roles\WebRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\Manager\ChangeInfo.cshtml" />
+    <Content Include="Areas\User\Views\User\ChangeInfo.cshtml" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -495,6 +495,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ReadMe.MD" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="flatlab-master\LICENSE" />
@@ -555,21 +556,9 @@
     <Content Include="Scripts\JqueryCustom\jquery-ui.theme.min.css" />
     <Content Include="Scripts\JqueryCustom\LICENSE.txt" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Views\Admin\PersonelList.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Login\UserLogin.cshtml" />
-    <Content Include="Views\Manager\CreatePersonel.cshtml" />
-    <Content Include="Views\Manager\Index.cshtml" />
-    <Content Include="Views\Manager\UpdateCompany.cshtml" />
     <Content Include="Views\Shared\_ManagerLayout.cshtml" />
     <Content Include="Views\Shared\_UserLayout.cshtml" />
-    <Content Include="Views\Survey\Index.cshtml" />
-    <Content Include="Views\Survey\SurveyAnswerDetails.cshtml" />
-    <Content Include="Views\Survey\SurveyAnswers.cshtml" />
-    <Content Include="Views\Survey\SurveyPartial.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\User\SolveSurvey.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -580,15 +569,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\AddCompany.cshtml" />
-    <Content Include="Views\Admin\UpdateCompany.cshtml" />
-    <Content Include="Views\Admin\CreatePersonel.cshtml" />
     <Content Include="Scripts\JqueryCustom\package.json" />
   </ItemGroup>
   <ItemGroup>

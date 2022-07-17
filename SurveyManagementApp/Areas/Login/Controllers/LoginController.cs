@@ -4,7 +4,7 @@ using Project.BLL.Concrete;
 using Project.DAL.EntityFramework;
 using Project.ENTITIES.Concrete;
 
-namespace SurveyManagementApp.Areas.Login
+namespace SurveyManagementApp.Areas.Login.Controllers
 {
     [AllowAnonymous]
     public class LoginController : Controller
@@ -14,6 +14,12 @@ namespace SurveyManagementApp.Areas.Login
         [HttpGet]
         public ActionResult Index()
         {
+            var admin = Session["AdminName"];
+            if (admin != null)
+            {
+                return RedirectToAction("index", "Admin", new { area = "Admin" }); 
+            }
+
             return View();
         }
 
@@ -25,37 +31,45 @@ namespace SurveyManagementApp.Areas.Login
             if (obj == null) return View();
             FormsAuthentication.SetAuthCookie(obj.AdminName, false);
             Session["AdminName"] = obj.AdminName;
-            return RedirectToAction("index", "Admin");
+            return RedirectToAction("index", "Admin", new { area = "Admin" });
         }
         [HttpGet]
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Login", new { area = "Login" });
         }
         [HttpGet]
         public ActionResult LogoutPersonel()
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("UserLogin", "Login");
+            return RedirectToAction("UserLogin", "Login", new { area = "Login" });
         } 
         [HttpGet]
         public ActionResult UserLogin()
         {
+            var uname = Session["UserName"];
+            if (uname!=null)
+            {
+                var user = pm.GetPersonelByUserName(uname.ToString()); 
+                return RedirectToAction("index", user.Role==Role.Manager ? "Manager" : "User",
+                    user.Role==Role.Manager ? new { area = "Manager" } : new { area = "User" }); 
+            } 
             return View();
         }
         [HttpPost]
         public ActionResult UserLogin(Personel p)
         {
             // if (!ModelState.IsValid) return View();
-            var obj = pm.GetPersonel(p);
-            if (obj == null) return View();
-            FormsAuthentication.SetAuthCookie(obj.UserName, true);
-            Session["UserName"] = obj.UserName;
-            Session["User"] = obj.FullName;
-            return RedirectToAction("index", obj.Role==Role.Manager ? "Manager" : "User");
+            var user = pm.GetPersonel(p);
+            if (user == null) return View();
+            FormsAuthentication.SetAuthCookie(user.UserName, true);
+            Session["UserName"] = user.UserName;
+            Session["User"] = user.FullName;
+            return RedirectToAction("index", user.Role==Role.Manager ? "Manager" : "User",
+                user.Role==Role.Manager ? new { area = "Manager" } : new { area = "User" });
         }
     }
 }

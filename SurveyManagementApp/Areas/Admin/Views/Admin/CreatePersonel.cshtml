@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "Create Personel";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/JqueryCustom/jquery-ui.js"></script>
@@ -52,7 +52,7 @@
             @Html.Label("Company")
             @Html.DropDownListFor(x => x.CompanyID, new SelectList(ViewBag.CompanyList != null ? ViewBag.CompanyList : string.Empty, "CompanyID", "CompanyName"), new { @class = "form-control" })
            <button id="btnCreate" style="margin-top:15px; " onclick="passF()" class="btn btn-primary">Create Personnel</button>
-            <a id="autoCreate" style="margin-top:15px"  href="/Admin/AutoCreate/" onclick="alert('New Personnel was created.'); 
+            <a id="autoCreate" style="margin-top:15px"  href="/Admin/Admin/AutoCreate/" onclick="alert('New Personnel was created.'); 
                document.getElementById('autoCreate').href += document.getElementById('CompanyID').value;" class="btn btn-success">Auto Create Personnel</a>
              <br />
             <br />
