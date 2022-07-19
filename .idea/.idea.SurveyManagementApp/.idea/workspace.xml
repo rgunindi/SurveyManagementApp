@@ -7,60 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0479573-7670-4c82-9b83-41a0e94f0c46" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Views/Manager/PersonelList.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Views/Manager/SolveSurvey.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Survey/Views/Survey/Manager.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/ErrorPage/Page403.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/flatlab-master/img/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/flatlab-master/img/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/flatlab-master/img/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SurveyManagementApp/flatlab-master/img/projectIt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/struct1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/struct2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SurveyManagementApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurveyManagementApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Abstract/IPersonelService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Abstract/IPersonelService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Abstract/IRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Concrete/AnswerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Concrete/AnswerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Concrete/PersonelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Concrete/PersonelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Concrete/Repositories/GenericRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Concrete/SurveyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.BLL/Project.BLL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project.BLL/Project.BLL.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfAdminDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Project.DAL/EntityFramework/EfAdminDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/App_Start/RouteConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/App_Start/RouteConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Controllers/AdminController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Controllers/DashboardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Controllers/DashboardController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Views/Admin/CreatePersonel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Views/Admin/CreatePersonel.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Views/Admin/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Views/Admin/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Views/Dashboard/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Views/Dashboard/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Views/Shared/_AdminLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Admin/Views/Shared/_AdminLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Controllers/LoginController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Views/Login/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Views/Login/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Views/Login/UserLogin.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Views/Login/UserLogin.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Views/Shared/_AdminLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Views/Shared/_AdminLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Views/Shared/_ManagerLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Views/Shared/_ManagerLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Views/Shared/_UserLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Login/Views/Shared/_UserLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Controllers/DashboardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Controllers/DashboardController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Controllers/ManagerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Controllers/ManagerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Views/Dashboard/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Views/Dashboard/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Views/Manager/CreatePersonel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Views/Manager/CreatePersonel.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Views/Shared/_ManagerLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Manager/Views/Shared/_ManagerLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Survey/Controllers/SurveyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Survey/Controllers/SurveyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Survey/Views/Survey/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Survey/Views/Survey/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Survey/Views/Survey/SurveyAnswers.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Survey/Views/Survey/SurveyAnswers.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/Survey/Views/Survey/SurveyPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/Survey/Views/Survey/SurveyPartial.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/User/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/User/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/User/Views/Shared/_UserLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/User/Views/Shared/_UserLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Areas/User/Views/User/SolveSurvey.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Areas/User/Views/User/SolveSurvey.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Controllers/ErrorPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Controllers/ErrorPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/ReadMe.MD" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/ReadMe.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/SurveyManagementApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/SurveyManagementApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/ErrorPage/Page404.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/ErrorPage/Page404.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Views/Shared/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Views/Shared/Error.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Web.Debug.config" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Web.Debug.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/Web.config" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/Web.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyManagementApp/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyManagementApp/favicon.ico" afterDir="false" />
-    </list>
+    <list default="true" id="d0479573-7670-4c82-9b83-41a0e94f0c46" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,6 +131,7 @@
       <workItem from="1657971066235" duration="20766000" />
       <workItem from="1658080548074" duration="34564000" />
       <workItem from="1658251871316" duration="4228000" />
+      <workItem from="1658256785865" duration="6000" />
     </task>
     <servers />
   </component>
