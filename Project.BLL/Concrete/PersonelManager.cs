@@ -1,5 +1,4 @@
-﻿using Project.BLL.Concrete.Repositories;
-using Project.BLL.Abstract;
+﻿using Project.BLL.Abstract;
 using Project.ENTITIES.Concrete;
 using System;
 using System.Collections.Generic;
@@ -50,6 +49,10 @@ namespace Project.BLL.Concrete
             return _personelDal.GetAll(predicate);
         }
 
+        public int GetPersonelWaitingSurvey()
+        {
+            return _personelDal.GetAll(x=>x.SurveyID!=null).Count;
+        }
         public Personel GetPersonelInfo(Personel p)
         {
             return _personelDal
@@ -85,7 +88,7 @@ namespace Project.BLL.Concrete
             return ReturnValue(id).Count > 0 ? per : ReturnValue(p);
         }
 
-        public object GetAllPersonelByCompanyID(int pCompanyId)
+        public List<Personel> GetAllPersonelByCompanyID(int pCompanyId)
         {
             var per = _personelDal.GetAll((x) => x.CompanyID == pCompanyId).OrderByDescending(x => x.Role)
                 .ToList();

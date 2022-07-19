@@ -55,7 +55,7 @@
             <i class="fa fa-bars"></i>
         </div>
         <!--logo start-->
-        <a href="/Manager/Manager" class="logo">Flat<span>lab</span></a>
+        <a href="/Manager/Dashboard" class="logo">Flat<span>lab</span></a>
         <!--logo end-->
         <div class="top-nav ">
             <!--search & user info start-->
@@ -82,7 +82,7 @@
                             <a href="/Manager/Manager/index#"><i class="fa fa-bell-o"></i> Notification</a>
                         </li>
                         <li>
-                            <a href="/login/logoutPersonel"><i class="fa fa-key"></i> Log Out</a>
+                            <a href="/login/login/logoutPersonel"><i class="fa fa-key"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -104,7 +104,7 @@
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
-                    </li> 
+                    </li>
                     <li>
                         <a href="/Manager/Manager/index">
                             <i class="fa fa-dashboard"></i>
@@ -114,7 +114,7 @@
                 }
 
                 <li class="sub-menu">
-                    <a href="/Manager/Manager/CreatePersonel">
+                    <a href="/Manager/Manager/PersonelList">
                         <i class="fa fa-laptop"></i>
                         <span>Personel</span>
                     </a>
@@ -133,32 +133,37 @@
                             <a href="/Survey/Survey/SurveyAnswers">Survey Answers</a>
                         </li>
                     </ul>
+                    <ul class="sub">
+                        <li>
+                            <a href="/Manager/Manager/SolveSurvey">Solve Survey</a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li>
                     @if (Session["UserName"] != null)
-                                       {
-                                           <a href="/login/login/logoutPersonel">
-                                               <i class="fa fa-lock"></i>
-                                               <span>Logout</span>
-                                           </a>
-                                       }
-                                       else
-                                       {
-                                           <a href="javascript:;">
-                                               <i class="fa fa-user-md"></i>
-                                               <span>Login Page</span>
-                                           </a>
-                                           <ul class="sub">
-                   
-                                               <li>
-                                                   <a href="/login/Login/index">Admin Login</a>
-                                               </li>
-                                               <li>
-                                                   <a href="/Login/login/UserLogin">User Login</a>
-                                               </li>
-                                           </ul>
-                                       }
+                    {
+                        <a href="/login/login/logoutPersonel">
+                            <i class="fa fa-lock"></i>
+                            <span>Logout</span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="javascript:;">
+                            <i class="fa fa-user-md"></i>
+                            <span>Login Page</span>
+                        </a>
+                        <ul class="sub">
+
+                            <li>
+                                <a href="/login/Login/index">Admin Login</a>
+                            </li>
+                            <li>
+                                <a href="/Login/login/UserLogin">User Login</a>
+                            </li>
+                        </ul>
+                    }
                 </li>
             </ul>
             <!-- sidebar menu end-->

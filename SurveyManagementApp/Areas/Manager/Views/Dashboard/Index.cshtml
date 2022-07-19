@@ -8,189 +8,86 @@
     int c = 0;
     var perList = ViewBag.perList;
     var SurveyList = ViewBag.SurveyList;
-    var CompanyList=ViewBag.CompanyList;
-    var SolvedSurveyAnswerList=ViewBag.SolvedSurveyAnswerList;
+    var CompanyList = ViewBag.CompanyList;
+    var SolvedSurveyAnswerList = ViewBag.SolvedSurveyAnswerList;
+    var perSurveyList = ViewBag.perSurveyList;
+    var SurveyRatio = ViewBag.SurveyRatio;
+    var total = SurveyRatio + perSurveyList;
     int perCount = 0;
 }
-<h2>DASHBOARD</h2>
+<div style="display: flex;justify-content: space-between;">
+    <h2>DASHBOARD</h2>
+    <div style='width: 150px; border-radius: 5px; background: url("../../../../flatlab-master/img/android-chrome-192x192.png") round;background-origin: content-box;'></div>
+</div>
 <br/>
-   <!--state overview start-->
-              <div class="row state-overview">
-                  <div class="col-lg-3 col-sm-6">
-                      <section class="panel">
-                          <div class="symbol terques">
-                              <i class="fa fa-user"></i>
-                          </div>
-                          <div class="value">
-                              <h1 class="count_1">@perList</h1>
-                              <p>Users</p>
-                          </div>
-                      </section>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                      <section class="panel">
-                          <div class="symbol red">
-                              <i class="fa fa-compass"></i>
-                          </div>
-                          <div class="value">
-                              <h1 class="count_2">@CompanyList</h1>
-                              <p>Companies</p>
-                          </div>
-                      </section>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                      <section class="panel">
-                          <div class="symbol yellow">
-                              <i class="fa fa-superscript"></i>
-                          </div>
-                          <div class="value">
-                              <h1 class="count_3">@SurveyList</h1>
-                              <p>Surveys</p>
-                          </div>
-                      </section>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                      <section class="panel">
-                          <div class="symbol blue">
-                              <i class="fa fa-bar-chart-o"></i>
-                          </div>
-                          <div class="value">
-                              <h1 class=" count_4">@SolvedSurveyAnswerList</h1>
-                              <p>Solved Survey Questions</p>
-                          </div>
-                      </section>
-                  </div>
-              </div>
-              <!--state overview end-->
-              <div class="row">
-                  <div class="col-lg-4">
-                      <!--user info table start-->
-                      <section class="panel">
-                          <div class="panel-body">
-                              <a href="index.html#" class="task-thumb">
-                                  <img src="img/avatar1.jpg" alt="">
-                              </a>
-                              <div class="task-thumb-details">
-                                  <h1><a href="index.html#">Anjelina Joli</a></h1>
-                                  <p>Senior Architect</p>
-                              </div>
-                          </div>
-                          <table class="table table-hover personal-task">
-                              <tbody>
-                                <tr>
-                                    <td>
-                                        <i class=" fa fa-tasks"></i>
-                                    </td>
-                                    <td>New Task Issued</td>
-                                    <td> 02</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <i class="fa fa-exclamation-triangle"></i>
-                                    </td>
-                                    <td>Task Pending</td>
-                                    <td> 14</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <i class="fa fa-envelope"></i>
-                                    </td>
-                                    <td>Inbox</td>
-                                    <td> 45</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <i class=" fa fa-bell-o"></i>
-                                    </td>
-                                    <td>New Notification</td>
-                                    <td> 09</td>
-                                </tr>
-                              </tbody>
-                          </table>
-                      </section>
-                      <!--user info table end-->
-                  </div>
-                  <div class="col-lg-8">
-                      <!--work progress start-->
-                      <section class="panel">
-                          <div class="panel-body progress-panel">
-                              <div class="task-progress">
-                                  <h1>Work Progress</h1>
-                                  <p>Anjelina Joli</p>
-                              </div>
-                              <div class="task-option">
-                                  <select class="styled hasCustomSelect" style="appearance: menulist-button; width: 111px; position: absolute; opacity: 0; height: 39px; font-size: 12px;">
-                                      <option>Anjelina Joli</option>
-                                      <option>Tom Crouse</option>
-                                      <option>Jhon Due</option>
-                                  </select><span class="customSelect styled" style="display: inline-block;"><span class="customSelectInner" style="width: 89px; display: inline-block;">Anjelina Joli</span></span>
-                              </div>
-                          </div>
-                          <table class="table table-hover personal-task">
-                              <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>
-                                      Target Sell
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-important">75%</span>
-                                  </td>
-                                  <td>
-                                    <div id="work-progress1"><canvas width="47" height="20" style="display: inline-block; width: 47px; height: 20px; vertical-align: top;"></canvas></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>
-                                      Product Delivery
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-success">43%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress2"><canvas width="47" height="22" style="display: inline-block; width: 47px; height: 22px; vertical-align: top;"></canvas></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>
-                                      Payment Collection
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-info">67%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress3"><canvas width="47" height="22" style="display: inline-block; width: 47px; height: 22px; vertical-align: top;"></canvas></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>
-                                      Work Progress
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-warning">30%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress4"><canvas width="47" height="22" style="display: inline-block; width: 47px; height: 22px; vertical-align: top;"></canvas></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>5</td>
-                                  <td>
-                                      Delivery Pending
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-primary">15%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress5"><canvas width="47" height="22" style="display: inline-block; width: 47px; height: 22px; vertical-align: top;"></canvas></div>
-                                  </td>
-                              </tr>
-                              </tbody>
-                          </table>
-                      </section>
-                      <!--work progress end-->
-                  </div>
-              </div>
+<!--state overview start-->
+<div class="row state-overview">
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel">
+            <div class="symbol terques">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="value">
+                <h1 class="count_1">@perList</h1>
+                <p>Users</p>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel">
+            <div class="symbol red">
+                <i class="fa fa-compass"></i>
+            </div>
+            <div class="value">
+                <h1 class="count_2">@CompanyList</h1>
+                <p>Companies</p>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel">
+            <div class="symbol yellow">
+                <i class="fa fa-superscript"></i>
+            </div>
+            <div class="value">
+                <h1 class="count_3">@SurveyList</h1>
+                <p>Surveys</p>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel">
+            <div class="symbol blue">
+                <i class="fa fa-bar-chart-o"></i>
+            </div>
+            <div class="value">
+                <h1 class=" count_4">@SolvedSurveyAnswerList</h1>
+                <p>Solved Survey Questions</p>
+            </div>
+        </section>
+    </div>
+</div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Survey', 'per personel'],
+            ['Unsolved Survey',  @perSurveyList],
+            ['Solved Survey', @SurveyRatio],
+            ['Total Assigned Survey', @total],
+        ]);
+
+        var options = {
+          title: 'Survey Management'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+<div id="piechart" style="width: 99%; height: 500px;"></div>

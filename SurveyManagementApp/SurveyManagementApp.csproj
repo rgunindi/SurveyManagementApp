@@ -168,6 +168,9 @@
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Manager\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Manager\Views\Manager\ChangeInfo.cshtml" />
+    <Content Include="Areas\Manager\Views\Manager\PersonelList.cshtml" />
+    <Content Include="Areas\Manager\Views\Manager\SolveSurvey.cshtml" />
+    <Content Include="Areas\Survey\Views\Survey\Manager.cshtml" />
     <Content Include="Areas\User\Views\User\ChangeInfo.cshtml" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -325,6 +328,7 @@
     <Content Include="flatlab-master\header-color.html" />
     <Content Include="flatlab-master\horizontal_menu.html" />
     <Content Include="flatlab-master\image_cropping.html" />
+    <Content Include="flatlab-master\img\android-chrome-192x192.png" />
     <Content Include="flatlab-master\img\avatar-mini.jpg" />
     <Content Include="flatlab-master\img\avatar-mini2.jpg" />
     <Content Include="flatlab-master\img\avatar-mini3.jpg" />
@@ -350,6 +354,8 @@
     <Content Include="flatlab-master\img\email-img\social-twitter.png" />
     <Content Include="flatlab-master\img\email-img\social-youtube.png" />
     <Content Include="flatlab-master\img\email-img\vector-lab.jpg" />
+    <Content Include="flatlab-master\img\favicon-32x32.png" />
+    <Content Include="flatlab-master\img\favicon.ico" />
     <Content Include="flatlab-master\img\fb-img.jpg" />
     <Content Include="flatlab-master\img\file-search\ai.png" />
     <Content Include="flatlab-master\img\file-search\doc.png" />
@@ -405,6 +411,7 @@
     <Content Include="flatlab-master\img\product2.png" />
     <Content Include="flatlab-master\img\product3.png" />
     <Content Include="flatlab-master\img\profile-avatar.jpg" />
+    <Content Include="flatlab-master\img\projectIt.png" />
     <Content Include="flatlab-master\img\purple-bg.jpg" />
     <Content Include="flatlab-master\img\ring.jpg" />
     <Content Include="flatlab-master\img\sm-img-1.jpg" />
@@ -556,6 +563,7 @@
     <Content Include="Scripts\JqueryCustom\jquery-ui.theme.min.css" />
     <Content Include="Scripts\JqueryCustom\LICENSE.txt" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\ErrorPage\Page403.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
     <Content Include="Views\Shared\_ManagerLayout.cshtml" />
     <Content Include="Views\Shared\_UserLayout.cshtml" />

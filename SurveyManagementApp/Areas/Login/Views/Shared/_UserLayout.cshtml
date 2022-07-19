@@ -10,7 +10,6 @@
     <meta name="description" content="">
     <meta name="author" content="Mosaddek">
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, User, Template, Theme, Responsive, Fluid, Retina">
-    <link rel="shortcut icon" href="http://thevectorlab.net/flatlab/img/favicon.png">
 
     <title>FlatLab - Flat & Responsive Bootstrap User Template</title>
 
@@ -98,34 +97,6 @@
         <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                @if (User.IsInRole("Manager"))
-                {
-                    <li>
-                        <a class="active" href="/User/index">
-                            <i class="fa fa-dashboard"></i>
-                            <span>Company</span>
-                        </a>
-                    </li>
-                }
-
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-laptop"></i>
-                        <span>Personel</span>
-                    </a>
-                </li>
-
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-book"></i>
-                        <span>Survey</span>
-                    </a>
-                    <ul class="sub">
-                        <li>
-                            <a href="/User/User/SolveSurvey">Solve Survey</a>
-                        </li>
-                    </ul>
-                </li>
                 <li>
                     @if (Session["UserName"] != null)
                     {
@@ -141,12 +112,11 @@
                             <span>Login Page</span>
                         </a>
                         <ul class="sub">
-
                             <li>
                                 <a href="/login/Login/index">Admin Login</a>
                             </li>
                             <li>
-                                <a href="/login/Login/UserLogin">User Login</a>
+                                <a href="/login/Login/UserLogin">User-Manager Login</a>
                             </li>
                         </ul>
                     }

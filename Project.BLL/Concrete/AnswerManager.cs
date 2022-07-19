@@ -35,18 +35,18 @@ namespace Project.BLL.Concrete
         }
         public dynamic GetAllInfo()
         {
-            
-            // var List = answers.Select(iAnswer => personels.Where(x => x.PersonelID == iAnswer.PersonelID)
-            //         .Select(x => new {x.PersonelID, x.CurrentComp, x.SurveyID,x.IsAnonymous,})
-            //         .ToList())
-            //     .Cast<dynamic>()
-            //     .ToList();
-            var answers = _answerDal.GetAll();
+                  var answers = _answerDal.GetAll();
             var list=answers.Select(i=> _personelDal.GetById(i.PersonelID)).ToList().Distinct(); 
             object[] obj={list,answers};
             return obj;
         }
-
+        public int GetAllPerCount()
+        {
+            var answers = _answerDal.GetAll();
+            var list=answers.Select(i=> _personelDal.GetById(i.PersonelID)).ToList().Distinct(); 
+            
+            return list.Count();
+        }
         public Answer GetByPersonelId(int id)
         {
             return _answerDal.GetById(id);
@@ -75,24 +75,26 @@ namespace Project.BLL.Concrete
             {
                 return null;
             }
-            var personels = _personelDal.GetAll(x => x.CompanyID == per.CompanyID).Where(x=>x.SurveyID==per.SurveyID);
+
+            var personels = _personelDal.GetAll(x => x.CompanyID == per.CompanyID);
+                //.Where(x=>x.SurveyID==per.SurveyID);
             var answers = _answerDal.GetAll();
-            var result = from a in answers
-                         join p in personels
-                         on a.PersonelID equals p.PersonelID
-                         select new
-                         {
-                             a.PerAnswer,
-                             a.SurveyQuestionID,
-                             p.CurrentComp,
-                             p.IsAnonymous,
-                             p.SurveyID,
-                         };
-            foreach (var VARIABLE in result)
-            {
-                var c = VARIABLE;
-            }
-            object[] obj={personels,answers,result}; 
+            // var result = from a in answers
+            //              join p in personels
+            //              on a.PersonelID equals p.PersonelID
+            //              select new
+            //              {
+            //                  a.PerAnswer,
+            //                  a.SurveyQuestionID,
+            //                  p.CurrentComp,
+            //                  p.IsAnonymous,
+            //                  p.SurveyID,
+            //              };
+            // foreach (var VARIABLE in result)
+            // {
+            //     var c = VARIABLE;
+            // }
+            object[] obj={personels,answers}; 
             return obj;
         }
     }

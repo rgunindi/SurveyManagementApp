@@ -12,8 +12,6 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 
-    <link rel="shortcut icon" href="http://thevectorlab.net/flatlab/img/favicon.png">
-
     <title>FlatLab - Flat & Responsive Bootstrap Admin Template</title>
 
     <!-- Bootstrap core CSS -->
@@ -62,11 +60,14 @@
                 </li>
                 <!-- user login dropdown start-->
                 <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="~/flatlab-master/index.html#">
-                        <img alt="" src="~/flatlab-master/img/avatar1_small.jpg">
-                        <span class="username">@Session["AdminName"]</span>
-                        <b class="caret"></b>
-                    </a>
+                     @if (Session["AdminName"] != null)
+                     {
+                         <a data-toggle="dropdown" class="dropdown-toggle" href="~/flatlab-master/index.html#">
+                             <img alt="" src="~/flatlab-master/img/avatar1_small.jpg">
+                             <span class="username" hidden="hidden">@Session["AdminName"]</span>
+                             <b class="caret"></b>
+                         </a>
+                     }
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
                         <li>
@@ -83,9 +84,6 @@
                         </li>
                     </ul>
                 </li>
-                <li class="sb-toggle-right">
-                    <i class="fa  fa-align-right"></i>
-                </li>
                 <!-- user login dropdown end -->
             </ul>
             <!--search & user info end-->
@@ -93,80 +91,27 @@
     </header>
     <!--header end-->
     <!--sidebar start-->
-    <aside>
-        <div id="sidebar" class="nav-collapse ">
-            <!-- sidebar menu start-->
-            <ul class="sidebar-menu" id="nav-accordion">
-                @if (User.IsInRole("Admin"))
-                {
+       <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                        <a class="active" href="/Admin/Admin/index">
-                            <i class="fa fa-dashboard"></i>
-                            <span>Company</span>
-                        </a>
+                            <a href="javascript:;">
+                                <i class="fa fa-user-md"></i>
+                                <span>Login Page</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="/login/Login/index">Admin Login</a>
+                                </li>
+                                <li>
+                                    <a href="/login/Login/UserLogin">User-Manager Login</a>
+                                </li>
+                            </ul>
                     </li>
-
-                    <li class="sub-menu">
-                        <a href="/Admin/Admin/PersonelList">
-                            <i class="fa fa-laptop"></i>
-                            <span>Personel</span>
-                        </a>
-                    </li>
-                }
-                <li class="sub-menu">
-                    <a href="">
-                        <i class="fa fa-book"></i>
-                        <span>Survey</span>
-                    </a>
-                     <ul class="sub">
-                                            <li>
-                                                <a href="/Survey/Survey">Create Survey</a>
-                                            </li>
-                                            <li>
-                                                <a href="/Survey/Survey/SurveyAnswers">Survey Answers</a>
-                                            </li>
-                    </ul>
-                </li>
-
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Charts</span>
-                    </a>
-                    <ul class="sub">
-                        <li>
-                            <a href="~/flatlab-master/morris.html">Morris</a>
-                        </li>
-                        <li>
-                            <a href="~/flatlab-master/chartjs.html">Chartjs</a>
-                        </li>
-                        <li>
-                            <a href="~/flatlab-master/flot_chart.html">Flot Charts</a>
-                        </li>
-                        <li>
-                            <a href="~/flatlab-master/xchart.html">xChart</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <i class="fa fa-user-md"></i>
-                        <span>Login Page</span>
-                    </a>
-                    <ul class="sub">
-                        <li>
-                            <a href="/Login/Login/index">Admin Login</a>
-                        </li>
-                        <li>
-                            <a href="/Login/Login/UserLogin">User Login</a>
-                        </li>
-                    </ul>
-                </li>
-
-            </ul>
-            <!-- sidebar menu end-->
-        </div>
-    </aside>
+                </ul>
+            </div>
+        </aside>
     <!--sidebar end-->
     <!--main content start-->
     <section id="main-content">

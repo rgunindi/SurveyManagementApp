@@ -18,6 +18,7 @@ namespace Project.BLL.Abstract
         Personel GetPersonelInfo(Personel p);
         Personel GetPersonelByUserName(string userName);
         List<Personel> GetAllPersonelByCompanyID(int id,dynamic p);
-        
+        int GetPersonelWaitingSurvey();
+
     }
 }

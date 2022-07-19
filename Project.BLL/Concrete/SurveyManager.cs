@@ -39,14 +39,12 @@ namespace Project.BLL.Concrete
             if (personels==null)
             {
                 var sId = _surveyDal.GetFirstOrDefault(x => x.SurveyTitle == surveyTitle).SurveyID;
-                if (sId == null || sId == 0)
+                if (sId != 0) return;
+                var survey = new Survey()
                 {
-                    var survey = new Survey()
-                    {
-                        SurveyTitle = surveyTitle, SurveyStatus = true
-                    };
-                    _surveyDal.Add(survey);
-                }
+                    SurveyTitle = surveyTitle, SurveyStatus = true
+                };
+                _surveyDal.Add(survey);
                 return;
             }
             foreach (var p in personels)
@@ -67,8 +65,8 @@ namespace Project.BLL.Concrete
                 var sId = s.SurveyID;
                 var personel = _personelDal.GetById(pId);
                 personel.SurveyID = Convert.ToInt32(sId);
-                int idCount = 0;
-                bool isAnonym = false;
+                var idCount = 0;
+                var isAnonym = false;
                 if (anonyms != null)
                 {
                     foreach (var i in ids)

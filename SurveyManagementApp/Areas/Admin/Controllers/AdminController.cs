@@ -114,7 +114,7 @@ namespace SurveyManagementApp.Areas.Admin.Controllers
             p.BornDate = Faker.Identification.DateOfBirth();
             p.Role = Role.Personel;
             p.PersonelPassword = p.LoginCheck;
-            p.UserName = p.PersonelName + pm.GetAll().Last().PersonelID+1;
+            p.UserName = p.PersonelName + (pm.GetAll().Last().PersonelID+1);
             if(id!=0)
                 p.CompanyID = id;
             pm.Add(p);

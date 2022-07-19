@@ -17,7 +17,7 @@ namespace SurveyManagementApp.Areas.Login.Controllers
             var admin = Session["AdminName"];
             if (admin != null)
             {
-                return RedirectToAction("index", "Admin", new { area = "Admin" }); 
+                return RedirectToAction("Index", "Dashboard", new { area = "Admin" }); 
             }
 
             return View();
@@ -31,7 +31,7 @@ namespace SurveyManagementApp.Areas.Login.Controllers
             if (obj == null) return View();
             FormsAuthentication.SetAuthCookie(obj.AdminName, false);
             Session["AdminName"] = obj.AdminName;
-            return RedirectToAction("index", "Admin", new { area = "Admin" });
+            return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
         }
         [HttpGet]
         public ActionResult Logout()
@@ -54,7 +54,7 @@ namespace SurveyManagementApp.Areas.Login.Controllers
             if (uname!=null)
             {
                 var user = pm.GetPersonelByUserName(uname.ToString()); 
-                return RedirectToAction("index", user.Role==Role.Manager ? "Manager" : "User",
+                return RedirectToAction("index", user.Role==Role.Manager ? "Dashboard" : "User",
                     user.Role==Role.Manager ? new { area = "Manager" } : new { area = "User" }); 
             } 
             return View();
@@ -68,7 +68,7 @@ namespace SurveyManagementApp.Areas.Login.Controllers
             FormsAuthentication.SetAuthCookie(user.UserName, true);
             Session["UserName"] = user.UserName;
             Session["User"] = user.FullName;
-            return RedirectToAction("index", user.Role==Role.Manager ? "Manager" : "User",
+            return RedirectToAction("index", user.Role==Role.Manager ? "Dashboard" : "User",
                 user.Role==Role.Manager ? new { area = "Manager" } : new { area = "User" });
         }
     }

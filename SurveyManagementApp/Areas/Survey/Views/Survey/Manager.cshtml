@@ -1,17 +1,17 @@
 ﻿@using Project.ENTITIES.Concrete
-@model List<Personel>
+@model dynamic
+
 @{
     ViewBag.Title = "title";
-    Layout = Session["AdminName"] != null ? "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml" : "~/Areas/Manager/Views/Shared/_ManagerLayout.cshtml";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerLayout.cshtml";
 }
 @{
     int c = 0;
     var perList = ViewBag.perList;
     var SurveyList = ViewBag.SurveyList;
-    var personels = new List<Personel>();
-    int perCount = 0;
+    var personels = perList;
+    var perCount = 0;
 }
-
 
 <h2>Create Survey</h2>
 <br/>
@@ -39,23 +39,12 @@
             </tr>
             </thead>
             <tbody>
-            @foreach (var item in ViewBag.CompanyList)
-            {
-                foreach (var pItem in perList)
-                {
-                    if (item.CompanyID == pItem.CompanyID)
-                    {
-                        personels.Add(pItem);
-                    }
-                }
-                if (personels.Count > 0)
-                {
-                            ++c;
+                    @{++c;}
                     <tr id=@c>
                         <th scope="row">
                             @c
                         </th>
-                        <td>@item.CompanyName</td>
+                        <td>@ViewBag.Company.CompanyName</td>
                        @{ perCount = personels.Count;}
                         <td id=@c  onmouseleave="dropEnter(event,@perCount)">
                                <div class="dropdown" data-control="checkbox-dropdown"  >
@@ -71,7 +60,6 @@
                                            @i.CurrentComp
                                        </label>
                                    }
-                                   @{ personels.RemoveRange(0, personels.Count); }
                                </div>
                                </div>
                         </td>
@@ -79,8 +67,6 @@
                             <label>Anonymous Survey: </label> <input type="checkbox" name="an" id=@c value="Set Anonymous"/>
                         </td>
                     </tr>
-                }
-            }
             </tbody>
         </table>
 
@@ -95,4 +81,5 @@
        }
 </script>
 @Html.Action("SurveyPartial", "Survey")
+
 

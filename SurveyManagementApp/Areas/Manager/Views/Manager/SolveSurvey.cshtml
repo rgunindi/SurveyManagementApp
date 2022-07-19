@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "title";
-    Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerLayout.cshtml";
 }
 @{
     if (Session["UserName"]==null)
@@ -14,7 +14,7 @@
 @{
     if (ViewBag.NoData!=null)
     {
-        Response.Redirect("/User");
+        Response.Redirect("/Survey/Survey/SurveyAnswers");
     }
     var surveyQuestions = (List<SurveyQuestion>) ViewBag.surveyQuestions;
     var questions = ((IEnumerable<Question>) ViewBag.questions).ToArray();
@@ -84,7 +84,7 @@
     }
     </tbody>
 </table>
-<input style="margin: 15px;" type="submit" value="Send Answers" onclick="send()" class="btn btn-success" />
+<input type="submit" style="margin: 15px;" value="Send Answers" onclick="send()" class="btn btn-success" />
 
 <script type="text/javascript">
   let postData={};
@@ -105,7 +105,7 @@ function send(){
         postData.surveyID=@ViewBag.survey.SurveyID;
             $.ajax({
                                                                                 type: 'POST',
-                                                                                url: '@Url.Action("SolveSurvey","User",new {area="User"})',
+                                                                                url: '@Url.Action("SolveSurvey","Manager",new {area="Manager"})',
                                                                                 data: postData,
                                                                                 success: function (data) {
                                                                                     alert('Success');

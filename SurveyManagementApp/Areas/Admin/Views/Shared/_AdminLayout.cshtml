@@ -11,9 +11,9 @@
     <meta name="author" content="Mosaddek">
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-
+    //icon
+    <link rel="icon" href="~/flatlab-master/img/favicon-32x32.png"/>
     <link rel="shortcut icon" href="http://thevectorlab.net/flatlab/img/favicon.png">
-
     <title>FlatLab - Flat & Responsive Bootstrap Admin Template</title>
 
     <!-- Bootstrap core CSS -->
@@ -52,7 +52,7 @@
             <i class="fa fa-bars"></i>
         </div>
         <!--logo start-->
-        <a href="/" class="logo">Flat<span>lab</span></a>
+        <a href="/Admin/Admin" class="logo">Flat<span>lab</span></a>
         <!--logo end-->
         <div class="top-nav ">
             <!--search & user info start-->
@@ -134,19 +134,8 @@
                     </ul>
                 </li>
 
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Charts</span>
-                    </a>
-                    <ul class="sub">
-                        <li>
-                            <a href="~/flatlab-master/morris.html">Morris</a>
-                        </li>
-                    </ul>
-                </li>
                 <li>
-                    @if (Session["UserName"] != null)
+                    @if (User.IsInRole("Admin"))
                                        {
                                            <a href="/login/login/logoutPersonel">
                                                <i class="fa fa-lock"></i>

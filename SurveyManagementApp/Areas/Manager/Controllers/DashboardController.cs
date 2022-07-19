@@ -16,6 +16,8 @@ namespace SurveyManagementApp.Areas.Manager.Controllers
             ViewBag.CompanyList = cm.GetAll().Count;
             ViewBag.perList = pm.GetAll().Count; 
             ViewBag.SurveyList = sm.GetAll().Count;
+            ViewBag.perSurveyList = pm.GetPersonelWaitingSurvey();
+            ViewBag.SurveyRatio = am.GetAllPerCount();
             ViewBag.SolvedSurveyAnswerList = am.GetAll().Count;
             return View();
         }

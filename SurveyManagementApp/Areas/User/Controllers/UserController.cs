@@ -68,9 +68,7 @@ namespace SurveyManagementApp.Areas.User.Controllers
                     }
                 }
 
-                //var surveyQuestionAnswers = questions.Select(q => sqam.GetByQuestionId(q.QuestionID)).ToList(); 
                 ViewBag.personel = p;
-                
                 ViewBag.survey = s;
                 ViewBag.surveyQuestions = surveyQuestions;
                 ViewBag.questions = questions;

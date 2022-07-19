@@ -27,7 +27,7 @@
 <h1>Create Personnel</h1>
 <br />
 @{var p = new Personel() { PersonelPassword = "" };}
-@using (Html.BeginForm("CreatePersonel","Admin",FormMethod.Post))
+@using (Html.BeginForm("CreatePersonel","Manager",FormMethod.Post))
 {
     <div class="form-group">
         <div style="width:400px">
@@ -52,7 +52,7 @@
             @Html.DropDownListFor(x => x.Company.CompanyID, new SelectList(ViewBag.CompanyList != null ? ViewBag.CompanyList : string.Empty, "CompanyID", "CompanyName"), new { @class = "form-control" })
            <button id="btnCreate" style="margin-top:15px; " onclick="passF()" class="btn btn-primary">Create Personnel</button>
             <a id="autoCreate" style="margin-top:15px"  href="/Manager/Manager/AutoCreate" onclick="alert('New Personnel was created.'); 
-               document.getElementById('autoCreate').href += '/'+document.getElementById('CompanyID').value;" class="btn btn-success">Auto Create Personnel</a>
+               document.getElementById('autoCreate').href += '/'+document.getElementById('Company_CompanyID').value;" class="btn btn-success">Auto Create Personnel</a>
              <br />
             <br />
             @Html.Label("All Personnels")

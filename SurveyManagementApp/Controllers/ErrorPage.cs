@@ -4,7 +4,12 @@ namespace SurveyManagementApp.Controllers
 {
     public class ErrorPage : Controller
     {
-        // GET
+        public ActionResult Page403()
+        {
+            Response.StatusCode = 403;
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
         public ActionResult Page404()
         {
             Response.StatusCode = 404;

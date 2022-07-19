@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 namespace Project.DAL.EntityFramework
 {
     public class EfAdminDal: GenericRepository<Admin> , IAdminDal
-
     {
     }
 }

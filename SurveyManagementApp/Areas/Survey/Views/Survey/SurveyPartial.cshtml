@@ -1,6 +1,4 @@
-﻿@* <script src="~/flatlab-master/js/jquery.js"></script> *@
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+﻿<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
 <link rel="stylesheet" href="~/Content/custom.css"/>
 <script type="text/javascript">
@@ -166,11 +164,15 @@ function titleCheck(){
                     }
                      if (document.querySelector('#QType').value === '2') {
                          
-                    saving(); //Hatirlayamadim neden save ettim bi kere daha
+                    saving(); 
                      }
+                document.getElementById('Question').value=""; 
+                let modalEl=document.getElementsByClassName('divmodal');
+                let values=Array.from(modalEl);
+                 values.forEach((i)=>i.remove());
                     $.ajax({
                                                                      type: 'POST',
-                                                                     url: '@Url.Action("Index","Survey",new {area="Survey"})',
+                                                                    url: '@Url.Action("Index","Survey",new {area="Survey"})',
                                                                      data: postData,
                                                                      success: function (data) {
                                                                          alert('Success');
@@ -181,11 +183,7 @@ function titleCheck(){
                 postData={};
                 answers=[];
                 count=0;
-                
-                let modalEl=document.getElementsByClassName('divmodal');
-                let values=Array.from(modalEl);
-                 values.forEach((i)=>i.remove());
-                 //document.querySelector('#sendButton').type='submit';
+               
                 }
                function saving(){
                     if (document.getElementById('surveytitle').value===''){alert('Please Type Survey Title in Survey Page');return;}
@@ -284,12 +282,12 @@ function titleCheck(){
                     <textarea style="width: 100%" name="Answer" id="A"></textarea>
 
 
-                    <button type="button" id="add" onclick=" if (document.getElementById('A').value==='') {
+                    <button id="add" type="button" onclick=" if (document.getElementById('A').value==='') {
                     alert('Please Type Answer'); return; }else saving(); ">Add Answer</button>
                    
                 </div>
                 <div clas="modal-footer">
-                    <button id="sendButton" onclick="send()" class="btn btn-info" data-bs-dismiss="modal" aria-label="Close">Create Question</button>
+                    <button type="button" id="sendButton" onclick="send()" class="btn btn-info" data-bs-dismiss="modal" aria-label="Close">Create Question</button>
                 </div>
             </form>
         </div>

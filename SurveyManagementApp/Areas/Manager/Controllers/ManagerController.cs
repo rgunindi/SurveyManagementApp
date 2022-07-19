@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Project.BLL.Concrete;
 using Project.DAL.EntityFramework;
 using System.Web.Mvc;
+using PagedList;
 using Project.BLL.ValidationRules;
 using Project.ENTITIES.Concrete;
 
@@ -12,6 +14,12 @@ namespace SurveyManagementApp.Areas.Manager.Controllers
     {
         CompanyManager cm = new CompanyManager(new EfCompanyDal());
         PersonelManager pm = new PersonelManager(new EfPersonelDal());
+        SurveyManager sm = new SurveyManager(new EfSurveyDal(), new EfPersonelDal());
+        SurveyQuestionManager sqm = new SurveyQuestionManager(new EfSurveyQuestionDal(), new EfSurveyDal());
+        QuestionManager qm = new QuestionManager(new EfQuestionDal(), new EfSurveyQuestionDal());
+        AnswerManager ansM = new AnswerManager(new EfAnswerDal(), new EfPersonelDal());
+        SurveyQuestionAnswerManager sqam =
+            new SurveyQuestionAnswerManager(new EfSurveyQuestionAnswerDal(), new EfQuestionDal());
        
         [HttpGet]
         public ActionResult Index()
@@ -29,7 +37,9 @@ namespace SurveyManagementApp.Areas.Manager.Controllers
             p.BornDate = Faker.Identification.DateOfBirth();
             p.Role = Role.Personel;
             p.PersonelPassword = p.LoginCheck;
-            p.CompanyID = id;
+            p.UserName = p.PersonelName + (pm.GetAll().Last().PersonelID+1);
+            if(id!=0)
+                p.CompanyID = id;
             pm.Add(p);
             return RedirectToAction("CreatePersonel");
         }
@@ -107,6 +117,25 @@ namespace SurveyManagementApp.Areas.Manager.Controllers
             return RedirectToAction("index");
         }
         
+        public ActionResult PersonelList(int page = 1)
+        {
+            var u = (string) Session["UserName"];
+            if (u == null)
+            {return RedirectToAction("UserLogin", "Login",new {area="Login"});}
+            var per=pm.GetPersonelByUserName(u);
+            if (per.CompanyID==null)
+            {
+                return RedirectToAction("CreatePersonel", "Manager", new {area="Manager"});
+            }
+            var p = pm.GetAllPersonelByCompanyID((int)per.CompanyID).ToPagedList(page, 10);
+            return View(p);
+        }
+        
+        public ActionResult DeletePersonel(int id)
+        {
+            pm.Delete(id);
+            return RedirectToAction("PersonelList");
+        }
         [HttpGet]
         public ActionResult ChangeInfo()
         {
@@ -132,6 +161,49 @@ namespace SurveyManagementApp.Areas.Manager.Controllers
             }
                 ViewBag.Error = result.Errors;
                 return View(p);
+        }
+        [HttpGet]
+        public ActionResult SolveSurvey()
+        {
+            var user = (string) Session["UserName"];
+            if (user == null)
+            {
+                return RedirectToAction("UserLogin", "Login", new { area = "Login" });
+            }
+            else
+            {
+                var p = pm.GetPersonelByUserName(user);
+                if (p.SurveyID == null) { ViewBag.NoData = true; return View();}
+                var sId = (int) p.SurveyID;
+                var s = sm.GetById((int) p.SurveyID);
+                var surveyQuestions = sqm.GetBySurveyId(sId);
+                var questions = surveyQuestions.Select(sQ => qm.GetBySurveyQId(sQ.SurveyQuestionID));
+                var surveyQuestionAnswers = new List<SurveyQuestionAnswer>();
+
+                foreach (var item in questions)
+                {
+                    var allAnswers = sqam.GetAll();
+                    surveyQuestionAnswers.AddRange(from answer in allAnswers let sqa = item.QuestionID == answer.QuestionID where sqa select answer);
+                }
+                ViewBag.personel = p;
+                ViewBag.survey = s;
+                ViewBag.surveyQuestions = surveyQuestions;
+                ViewBag.questions = questions;
+                ViewBag.surveyQuestionAnswers = surveyQuestionAnswers;
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult SolveSurvey(List<int> ids,List<string> values)
+        {
+            var u = (string) Session["UserName"];
+            if (u == null)
+            {return RedirectToAction("UserLogin", "Login",new {area="Login"});}
+            var per=pm.GetPersonelByUserName(u);
+            ansM.Add(ids,values,per); 
+            pm.Update(per);
+            return RedirectToAction("Index", "Manager", new { area = "Manager" });
         }
     }
 }
