@@ -1,0 +1,608 @@
+repo_name: rgunindi/SurveyManagementApp
+report_id: 17cf97afb9e2d9581c16a71227af8a81
+version: 0.1
+repo_type: Public
+timestamp: '2024-02-08T19:45:45+00:00'
+requested_by: rgunindi
+provider: github
+branch: main
+detected_tools_count: 42
+tools:
+- name: ASP.NET
+  description: An open source web framework for building modern web apps and services
+    with .NET
+  website_url: https://www.asp.net/
+  version: 4.7.2
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6755/2c45151a4a11d3a3c8e71bb34dd069d6_400x400.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/Project.BLL/Project.BLL.csproj
+  detection_source: Project.BLL/Project.BLL.csproj
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-06 18:40:13.000000000 Z
+- name: C#
+  description: Simple, general-purpose, object-oriented programming language for the
+    .NET platform
+  website_url: http://csharp.net
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1015/1200px-C_Sharp_wordmark.svg.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp
+  detection_source: Repo Metadata
+- name: CSS 3
+  description: The latest evolution of the Cascading Style Sheets language
+  website_url: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp
+  detection_source: Repo Metadata
+- name: ".NET"
+  description: A free, cross-platform, open source developer platform for building
+    many different types of applications
+  website_url: http://www.microsoft.com/net/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/1014/IoPy1dce_400x400.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-11 08:30:08.000000000 Z
+- name: Bootstrap
+  description: Simple and flexible HTML, CSS, and JS for popular UI components and
+    interactions
+  website_url: http://getbootstrap.com/
+  version: 3.4.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Front-End Frameworks
+  image_url: https://img.stackshare.io/service/1101/C9QJ7V3X.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-06 18:40:13.000000000 Z
+- name: jQuery
+  description: The Write Less, Do More, JavaScript Library.
+  website_url: http://jquery.com/
+  version: 1.8.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript UI Libraries
+  image_url: https://img.stackshare.io/service/1021/lxEKmMnB_400x400.jpg
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: Entity Framework
+  description: An object-relational mapper that enables .NET developers to work with
+    relational data
+  website_url: https://docs.microsoft.com/en-us/aspnet/entity-framework
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Object Relational Mapper (ORM)
+  image_url: https://img.stackshare.io/service/3251/no-img-open-source.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/Project.BLL/packages.config
+  detection_source: Project.BLL/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-07 19:10:23.000000000 Z
+- name: ESLint
+  description: The fully pluggable JavaScript code quality tool
+  website_url: http://eslint.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp
+  detection_source: Repo Metadata
+- name: Grunt
+  description: The JavaScript Task Runner
+  website_url: http://gruntjs.com/
+  version: 1.4.1
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: JS Build Tools / JS Task Runners
+  image_url: https://img.stackshare.io/service/845/falgg2jybmhgk16y62lr.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: NuGet
+  description: The package manager for .NET
+  website_url: https://www.nuget.org/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/service/2637/6I3oEOP4_400x400.jpg
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-06 18:40:13.000000000 Z
+- name: Visual Studio
+  description: State-of-the-art tools and services that you can use to create great
+    apps for devices, the cloud, and everything in between.
+  website_url: http://msdn.microsoft.com/en-us/vstudio/aa718325.aspx
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Integrated Development Environment
+  image_url: https://img.stackshare.io/service/1451/SR2hUhQN.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp.sln
+  detection_source: SurveyManagementApp.sln
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-06 18:40:13.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: FluentValidation
+  description: A popular .NET validation library
+  website_url: https://fluentvalidation.net/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/service/9673/default_debf406cb448b8b966a6f0bda56f1617cad2a5dc.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/Project.BLL/packages.config
+  detection_source: Project.BLL/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-07 19:10:23.000000000 Z
+- name: Modernizr
+  description: Respond to your user’s browser features
+  website_url: https://modernizr.com/
+  version: 2.8.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript Utilities & Libraries
+  image_url: https://img.stackshare.io/service/2440/9TeXWBzR_400x400.jpg
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-06 18:40:13.000000000 Z
+- name: Antlr
+  description: ANother Tool for Language Recognition
+  package_url: https://www.nuget.org/Antlr
+  version: 3.5.0
+  license: Other
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/13151/default_048f7c1081704627a12b8b5e168cfdbc9f28fb33.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-06 18:40:13.000000000 Z
+- name: Microsoft.AspNet.Mvc
+  description: ASP.NET MVC is a web framework that gives you a powerful, patterns-based
+    way to build dynamic websites and Web APIs
+  package_url: https://www.nuget.org/Microsoft.AspNet.Mvc
+  version: 5.2.7
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/12850/default_0f5233770e71818507f2339042e7e61bef904e70.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-12 10:41:51.000000000 Z
+- name: Microsoft.AspNet.Razor
+  description: Razor is a markup syntax for adding server-side logic to web pages
+  package_url: https://www.nuget.org/Microsoft.AspNet.Razor
+  version: 3.2.7
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/12930/default_f8bf1110f8f0beaf5fae35865de7f77ccd1139f0.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-11 08:30:08.000000000 Z
+- name: Microsoft.AspNet.Web.Optimization
+  description: ASP.NET Optimization introduces a way to bundle and optimize CSS and
+    JavaScript files
+  package_url: https://www.nuget.org/Microsoft.AspNet.Web.Optimization
+  version: 1.1.3
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/12966/default_bd8397841d0aa5de035298a9130ee2dc9d9b0ece.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-11 08:30:08.000000000 Z
+- name: Microsoft.AspNet.WebPages
+  description: This package contains core runtime assemblies shared between ASP.NET
+    MVC and ASP.NET Web Pages
+  package_url: https://www.nuget.org/Microsoft.AspNet.WebPages
+  version: 3.2.7
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/12947/default_d871263d8798790404638a4d3692cc70b6389166.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-12 10:41:51.000000000 Z
+- name: Microsoft.CodeDom.Providers.DotNetCompilerPlatform
+  description: Replacement CodeDOM providers that use the new .NET Compiler Platform
+  package_url: https://www.nuget.org/Microsoft.CodeDom.Providers.DotNetCompilerPlatform
+  version: 2.0.1
+  open_source: false
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/13106/default_048f7c1081704627a12b8b5e168cfdbc9f28fb33.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-11 08:30:08.000000000 Z
+- name: Microsoft.NETCore.Platforms
+  description: Provides runtime information required to resolve target framework,
+    platform, and runtime specific implementations of .NETCore packages
+  package_url: https://www.nuget.org/Microsoft.NETCore.Platforms
+  version: 1.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/12907/default_4b18ad6ce0b5b2bd1dc822207c362ce8e0f74098.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-11 08:30:08.000000000 Z
+- name: Microsoft.Web.Infrastructure
+  description: This package contains the Microsoft.Web.Infrastructure assembly that
+    lets you dynamically register HTTP modules at run time
+  package_url: https://www.nuget.org/Microsoft.Web.Infrastructure
+  version: 1.0.0
+  open_source: false
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/12927/default_2aeaea161c566d1abfbaf3f2206fda12b1eea9cd.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-11 08:30:08.000000000 Z
+- name: Microsoft.jQuery.Unobtrusive.Validation
+  description: JQuery plugin that unobtrusively sets up jQuery.Validation
+  package_url: https://www.nuget.org/Microsoft.jQuery.Unobtrusive.Validation
+  version: 3.2.11
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/13143/default_048f7c1081704627a12b8b5e168cfdbc9f28fb33.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-11 08:30:08.000000000 Z
+- name: NETStandard.Library
+  description: A set of standard .NET APIs that are prescribed to be used and supported
+    together
+  package_url: https://www.nuget.org/NETStandard.Library
+  version: 2.0.3
+  open_source: false
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/12843/default_0f5233770e71818507f2339042e7e61bef904e70.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-11 08:30:08.000000000 Z
+- name: Newtonsoft.Json
+  description: Json.NET is a popular high-performance JSON framework for .NET
+  package_url: https://www.nuget.org/Newtonsoft.Json
+  version: 12.0.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/nuget/image.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-11 08:30:08.000000000 Z
+  vulnerabilities:
+  - name: 'Duplicate Advisory: Improper Handling of Exceptional Conditions in Newtonsoft.Json'
+    cve_id: 
+    cve_url: https://github.com/advisories/GHSA-8rfx-6mr3-5jh3
+    detected_date: Jan 4
+    severity: high
+    first_patched: 13.0.1
+  - name: Improper Handling of Exceptional Conditions in Newtonsoft.Json
+    cve_id: CVE-2024-21907
+    cve_url: https://github.com/advisories/GHSA-5crp-9r3c-p9vr
+    detected_date: Jun 23
+    severity: high
+    first_patched: 13.0.1
+- name: PagedList
+  description: PagedList makes it easier for .Net developers to write paging code
+  package_url: https://www.nuget.org/PagedList
+  version: 1.17.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/13888/default_1dc9a9444fe68b18bef2b0e836067caced79799a.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-12 10:41:51.000000000 Z
+- name: PagedList.Mvc
+  description: Asp.Net MVC HtmlHelper method for generating paging control for use
+    with PagedList library
+  package_url: https://www.nuget.org/PagedList.Mvc
+  version: 4.5.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/14220/default_ffadef563895e8f528ab369639ee4a7ab8ef8d52.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-12 10:41:51.000000000 Z
+- name: System.Threading.Tasks.Extensions
+  description: Provides additional types that simplify the work of writing concurrent
+    and asynchronous code
+  package_url: https://www.nuget.org/System.Threading.Tasks.Extensions
+  version: 4.5.2
+  open_source: false
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/12998/default_aa8a6e377c22dbeff795489a5ab127b1d597b5ed.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/Project.BLL/packages.config
+  detection_source: Project.BLL/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-07 19:10:23.000000000 Z
+- name: WebGrease
+  description: Web Grease is a suite of tools for optimizing javascript
+  package_url: https://www.nuget.org/WebGrease
+  version: 1.6.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/13115/default_a057bdad489be3cb053d372a68695da4ac94962d.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-06 18:40:13.000000000 Z
+- name: jQuery.Validation
+  description: This jQuery plugin makes simple clientside form validation trivial,
+    while offering lots of option for customization
+  package_url: https://www.nuget.org/jQuery.Validation
+  version: 1.17.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: NuGet Packages
+  image_url: https://img.stackshare.io/package/13119/default_f0c74e534077001eb65a152707758ce46a2dc970.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/packages.config
+  detection_source: SurveyManagementApp/packages.config
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-07 19:10:23.000000000 Z
+  vulnerabilities:
+  - name: Regular Expression Denial of Service in jquery-validation
+    cve_id: CVE-2021-21252
+    cve_url: https://github.com/advisories/GHSA-jxwx-85vp-gvwm
+    detected_date: Mar 3
+    severity: high
+    first_patched: 1.19.3
+  - name: Regular expression denial of service in jquery-validation
+    cve_id: CVE-2021-43306
+    cve_url: https://github.com/advisories/GHSA-j9m2-h2pv-wvph
+    detected_date: May 31
+    severity: low
+    first_patched: 1.19.4
+- name: glob
+  description: A little globber
+  package_url: https://www.npmjs.com/glob
+  version: 7.2.0
+  license: ISC
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15875/default_7c39a83d4acd952df89b1ebfdb94c8646324fbf1.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: grunt-cli
+  description: The grunt command line interface
+  package_url: https://www.npmjs.com/grunt-cli
+  version: 1.4.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16021/default_924b66c04aa848a4028c1a5753a23dae0f835f86.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: grunt-contrib-concat
+  description: Concatenate files
+  package_url: https://www.npmjs.com/grunt-contrib-concat
+  version: 1.0.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16075/default_d4e765f8a43dcfd232c8b9ee9732058bc27c727a.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: grunt-contrib-csslint
+  description: Lint CSS files
+  package_url: https://www.npmjs.com/grunt-contrib-csslint
+  version: 2.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17982/default_4fd967542aef030b38a14a6ad69d2f385c52808d.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: grunt-contrib-qunit
+  description: Run QUnit unit tests in a headless Chrome instance
+  package_url: https://www.npmjs.com/grunt-contrib-qunit
+  version: 5.1.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16756/default_6e51a44775c61dcb2888547ad406a2f0cf2c344e.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: grunt-contrib-requirejs
+  description: Optimize RequireJS projects using r.js
+  package_url: https://www.npmjs.com/grunt-contrib-requirejs
+  version: 1.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17348/default_c1932d441699b98abea6098c6f8f65e2acb4f5ed.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: grunt-contrib-uglify
+  description: Minify JavaScript files with UglifyJS
+  package_url: https://www.npmjs.com/grunt-contrib-uglify
+  version: 5.0.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15954/default_ac622bc364a601d766b9a6f6039f191492f54d65.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: grunt-eslint
+  description: Validate files with ESLint
+  package_url: https://www.npmjs.com/grunt-eslint
+  version: 23.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16384/default_9ae0e75ed749aca83d89f7e1ccb309be2bfc610e.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: load-grunt-tasks
+  description: Load multiple grunt tasks using globbing patterns
+  package_url: https://www.npmjs.com/load-grunt-tasks
+  version: 5.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16062/default_924b66c04aa848a4028c1a5753a23dae0f835f86.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
+- name: rimraf
+  description: A deep deletion module for node
+  package_url: https://www.npmjs.com/rimraf
+  version: 3.0.2
+  license: ISC
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15807/default_db4a7791d2f1174547374b9b587bc10fec088a5a.png
+  detection_source_url: https://github.com/rgunindi/SurveyManagementApp/blob/main/SurveyManagementApp/Scripts/JqueryCustom/package.json
+  detection_source: SurveyManagementApp/Scripts/JqueryCustom/package.json
+  last_updated_by: xcod3r
+  last_updated_on: 2022-07-08 16:09:38.000000000 Z
